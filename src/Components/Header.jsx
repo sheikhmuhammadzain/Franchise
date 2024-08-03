@@ -1,7 +1,6 @@
 const Header = () => {
   return (
-    <div className="flex items-center justify-center border-b py-5 shadow-md">
-      <img src="/group-84152-1@2x.png" height={36} width={166} alt="logo" />
+    <div className="w-100 border w-full h-20 shadow-md">
     </div>
   );
 };

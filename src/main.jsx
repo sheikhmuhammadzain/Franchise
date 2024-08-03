@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from './Components/LoginPage.jsx';
-import { DefaultSidebar } from './Components/DefaultSidebar.jsx';
- 
 import { ThemeProvider } from "@material-tailwind/react";
+import App from './App.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DefaultSidebar/>,
+    element: <App/>,
   },
   {
     path: "/login",
