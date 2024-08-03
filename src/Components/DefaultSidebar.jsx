@@ -22,7 +22,7 @@ import {
 
 export function DefaultSidebar() {
   return (
-    <Card className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <Card className="h-screen w-full max-w-[18rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
           <img src="/group-84152-1@2x.png" width={144} alt="" />
@@ -35,12 +35,7 @@ export function DefaultSidebar() {
           </ListItemPrefix>
           Dashboard
         </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <ShoppingBagIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          E-Commerce
-        </ListItem>
+    
         <ListItem>
           <ListItemPrefix>
             <InboxIcon className="h-5 w-5" />
