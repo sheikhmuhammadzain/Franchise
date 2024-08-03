@@ -2,17 +2,27 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LoginPage from './Components/LoginPage.jsx';
 import { ThemeProvider } from "@material-tailwind/react";
 import App from './App.jsx';
+import ForgotPassword from './Components/ForgotPassword.jsx';
+import Login from './Components/Login.jsx';
+import AddFranchisorForm from './Components/AddFranchisorForm.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "/login",
-    element: <LoginPage/>,
+    element: <Login />,
+  },
+  {
+    path: "/forgot",
+    element: <ForgotPassword />,
+  },
+  {
+    path: "/form",
+    element: <AddFranchisorForm />,
   },
 ]);
 

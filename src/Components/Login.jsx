@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -12,8 +13,16 @@ function Login() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-3xl font-bold mb-4 text-center ">LOG IN</h2>
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md relative">
+        <h2 className="text-3xl font-bold mb-4 text-center ">
+          LOG IN{" "}
+          <Link to='/'>
+            <span className="ml-9 font-thin text-sm absolute top-[1rem] right-[1.4rem] cursor-pointer">
+              X
+            </span>
+          </Link>
+        </h2>
+
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
@@ -59,9 +68,9 @@ function Login() {
           </button>
         </form>
         <div className="text-center mt-4">
-          <a href="#" className="underline">
+          <Link to="/forgot" className="underline">
             Forgot password?
-          </a>
+          </Link>
         </div>
       </div>
     </div>
