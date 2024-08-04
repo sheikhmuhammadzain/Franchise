@@ -9,7 +9,7 @@ const App = () => {
       <Header />
       <Sidebar/>
       <main className="bg-[#FAFBFA] min-h-screen ">
-        <div className="container w-[80%] ml-auto px-7 ">
+        <div className="container max-w-[80%] ml-auto px-7 ">
           <div className="flex items-center justify-between pt-[100px]  ">
             <h1 className="font-semibold text-xl">Manage User</h1>
             <button className="bg-[#326DCF] text-white rounded-lg  px-6 py-2 text-xs md:text-base">

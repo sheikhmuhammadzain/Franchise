@@ -17,7 +17,7 @@ function Sidebar() {
       className={`fixed top-0 left-0 h-screen bg-white z-10 shadow-lg transition-transform transform ${
         isOpen ? "translate-x-0" : "-translate-x-[80%]"
       }`}
-      style={{ width: "250px" }}
+      style={{ width: "200px" }}
     >
       <div className="flex items-center justify-between p-4">
         <img src="/group-84152-1@2x.png" alt="" width={144} />
@@ -35,7 +35,7 @@ function Sidebar() {
       <div className="flex items-center px-3 hover:underline mx-3">
         <HiOutlinePresentationChartBar className="text-xl" />
         <Link to="/adminPanel">
-          <h2 className="p-3">Financial Overview</h2>
+          <h2 className="p-3 min-w-fit">Financial Overview</h2>
         </Link>
       </div>
       <div className="flex items-center px-3 hover:underline mx-3">
