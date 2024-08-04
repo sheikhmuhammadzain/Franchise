@@ -8,6 +8,7 @@ import ForgotPassword from './Components/ForgotPassword.jsx';
 import Login from './Components/Login.jsx';
 import AddFranchisorForm from './Components/AddFranchisorForm.jsx';
 import ManageUser from './Components/ManageUser.jsx';
+import AdminPage from './Components/AdminPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/ManageUser",
     element: <ManageUser />,
+  },
+  {
+    path: "/AdminPanel",
+    element: <AdminPage/>,
   },
 ]);
 
