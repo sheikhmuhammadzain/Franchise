@@ -1,10 +1,9 @@
-import Header from "./Components/Header";
-import Sidebar from "./Components/Sidebar";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
-
-const App = () => {
+const FranchisePage = () => {
   return (
-    <>
+    <div>
       <Header />
       <Sidebar />
       <main className="bg-[#FAFBFA] min-h-screen ">
@@ -18,12 +17,12 @@ const App = () => {
           </div>
           <div className="flex items-center gap-9 mt-9 border-b-2 py-4 font-bold">
             <Link to="/">
-              <h1 className="text-[#326DCF]  border-b-blue">Franchisor</h1>
+              <h1>Franchisor</h1>
             </Link>
 
             <Link to="/franchise">
               {" "}
-              <h1>Franchisee</h1>
+              <h1 className="text-[#326DCF]  border-b-blue">Franchisee</h1>
             </Link>
             <Link to="/sales">
               {" "}
@@ -45,8 +44,8 @@ const App = () => {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 
-export default App;
+export default FranchisePage;

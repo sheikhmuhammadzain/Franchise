@@ -4,10 +4,11 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "@material-tailwind/react";
 import App from './App.jsx';
-import ForgotPassword from './Components/ForgotPassword.jsx';
 import Login from './Components/Login.jsx';
 import AddFranchisorForm from './Components/AddFranchisorForm.jsx';
 import AdminPage from './Components/AdminPage.jsx';
+import FranchisePage from './Components/FranchisePage.jsx';
+import Sales from './Components/Sales.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,8 +19,8 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/forgot",
-    element: <ForgotPassword />,
+    path: "/franchise",
+    element: <FranchisePage />,
   },
   {
     path: "/form",
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/AdminPanel",
-    element: <AdminPage/>,
+    element: <AdminPage />,
+  },
+  {
+    path: "/sales",
+    element: <Sales/>,
   },
 ]);
 

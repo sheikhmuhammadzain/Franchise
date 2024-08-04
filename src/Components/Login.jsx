@@ -1,19 +1,46 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle login logic here
     console.log("Email:", email, "Password:", password);
   };
+  const [forgot, setforgot] = useState(true);
 
   return (
     <>
-    <Header></Header>
+      <div className=  {forgot?'fixed inset-0 grid place-items-center bg-[#22222291] bg-white z-10':'hidden'}  >
+        <div className="bg-white min-w-[50vw] rounded-lg">
+          <div className="flex justify-between items-center gap-20 bg-gray-50 px-10 py-6 rounded-lg">
+            <h1 className="font-bold text-2xl">Forgot Password</h1>
+            <p className="font-bold cusor-pointer" onClick={() => setforgot(false)}>X</p>
+          </div>
+          <div className="p-10 ">
+            <h1 className="mb-3">Confirm Email Adress</h1>
+            <input
+              type="email"
+              placeholder="Enter the email "
+              className=" border px-2 block w-full py-4 rounded-lg"
+            />
+            <div className="flex justify-end py-6 gap-8">
+              <button className="font-bold border px-3 rounded-lg text-gray-600 " onClick={()=>setforgot(false)}>Cancel</button>
+              <button className="btn btn-primary">Send Reset Link</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header className="h-[70px] bg-white border shadow-md fixed top-0 left-0 z-10 w-full flex items-center justify-center ">
+        <img
+          src="/group-84152-1@2x.png"
+          width={144}
+          className="cursor-pointer"
+          alt=""
+        />
+      </header>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md relative">
           <h2 className="text-3xl font-bold mb-4 text-center ">
@@ -69,10 +96,8 @@ function Login() {
               Sign In
             </button>
           </form>
-          <div className="text-center mt-4">
-            <Link to="/forgot" className="underline">
-              Forgot password?
-            </Link>
+          <div className="text-center mt-4 underline cursor-pointer" onClick={()=>setforgot(true)}>
+            Forgot password?
           </div>
         </div>
       </div>
