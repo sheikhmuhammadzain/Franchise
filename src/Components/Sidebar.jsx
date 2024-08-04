@@ -1,4 +1,3 @@
-import { FaAngleDoubleRight } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { BsWindowPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -17,7 +16,7 @@ function Sidebar() {
       className={`fixed top-0 left-0 h-screen bg-white z-10 shadow-lg transition-transform transform ${
         isOpen ? "translate-x-0" : "-translate-x-[80%]"
       }`}
-      style={{ width: "200px" }}
+      style={{ width: "20vw" }}
     >
       <div className="flex items-center justify-between p-4">
         <img src="/group-84152-1@2x.png" alt="" width={144} />
