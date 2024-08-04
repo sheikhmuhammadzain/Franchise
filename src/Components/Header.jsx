@@ -4,7 +4,7 @@ import { FaUser } from "react-icons/fa";
 const Header = () => {
   return (
     <div
-      className="w-100 border w-full h-15 shadow-lg 
+      className="w-100 border w-full h-15 shadow-md fixed top-0 left-0 z-1 bg-white
      "
     >
       <div className="flex items-center justify-end p-4 gap-3">
@@ -22,7 +22,7 @@ const Header = () => {
           >
             <div className="flex py-2 px-4 border-b justify-between items-center gap-9">
               <h1 className="font-bold text-xl">Notification</h1>
-              <button className="btn btn-active bg-blue-300 text-white">
+              <button className="btn btn-active bg-[#326DCF] text-white">
                 new
               </button>
             </div>
@@ -33,7 +33,7 @@ const Header = () => {
           </ul>
         </div>
         <Link to="/login">
-          <FaUser className="text-3xl  rounded-full p-2 bg-blue-500 text-white" />
+          <FaUser className="text-3xl  rounded-full p-2   bg-[#326DCF]  text-white" />
         </Link>
       </div>
     </div>
