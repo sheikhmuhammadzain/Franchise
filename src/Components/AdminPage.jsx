@@ -7,9 +7,11 @@ const AdminPage = () => {
       <div>
         <Sidebar />
       </div>
-      <div className="flex-1">
+      <div className="flex-1 ">
         <Header />
-        <Dashboard />
+        <div className="h-screen max-w-[100%]">
+          <Dashboard />
+        </div>
       </div>
     </div>
   );

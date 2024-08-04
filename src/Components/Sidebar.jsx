@@ -10,7 +10,7 @@ function Sidebar() {
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}
-        <label htmlFor="my-drawer" className="flex items-center py-10 px-4">
+        <label htmlFor="my-drawer" className="flex  py-10 px-4 bg-gray-50 h-screen">
           <FaAngleDoubleRight className="text-2xl" />
         </label>
       </div>

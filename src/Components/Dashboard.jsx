@@ -200,14 +200,15 @@ export default function Dashboard() {
         {/* Row for Table */}
         <Grid item xs={12}>
           <Item>
-            <form class="d-flex" role="search">
+            <form className="d-flex flex item-center justify-between mb-3 " role="search">
               <input
-                class="form-control me-2"
+                className="form-control me-2 border rounded-lg "
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+         
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
             </form>
