@@ -200,9 +200,9 @@ export default function Dashboard() {
         {/* Row for Table */}
         <Grid item xs={12}>
           <Item>
-            <form className="d-flex flex item-center justify-between mb-3 " role="search">
+            <form className="d-flex flex item-center justify-center gap-2 mb-3 " role="search">
               <input
-                className="form-control me-2 border rounded-lg "
+                className="form-control me-2 border rounded-lg pl-3 "
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
