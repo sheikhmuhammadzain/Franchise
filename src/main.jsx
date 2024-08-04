@@ -7,6 +7,7 @@ import App from './App.jsx';
 import ForgotPassword from './Components/ForgotPassword.jsx';
 import Login from './Components/Login.jsx';
 import AddFranchisorForm from './Components/AddFranchisorForm.jsx';
+import ManageUser from './Components/ManageUser.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/form",
     element: <AddFranchisorForm />,
+  },
+  {
+    path: "/ManageUser",
+    element: <ManageUser />,
   },
 ]);
 
