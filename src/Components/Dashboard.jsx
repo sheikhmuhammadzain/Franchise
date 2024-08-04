@@ -1,118 +1,15 @@
-/*mport React, { useEffect, useRef } from "react";
-import { Doughnut, Bar } from "react-chartjs-2";
-import { Card, Typography } from "@material-tailwind/react";
-import Chart from 'chart.js/auto';
-import Stack from '@mui/material/Stack'; // Assuming you're using Material-UI v5 for Stack
-
-const dataDoughnut = {
-  labels: ["KFC", "Lorem ipsum", "Lorem ipsum"],
-  datasets: [
-    {
-      data: [60, 6, 0.5],
-      backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56"],
-      hoverBackgroundColor: ["#36A2EB", "#FF6384", "#FFCE56"],
-    },
-  ],
-};
-
-const dataBar = {
-  labels: ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Lorem ipsum", "Lorem ipsum"],
-  datasets: [
-    {
-      label: "Sales",
-      backgroundColor: "rgba(54, 162, 235, 0.2)",
-      borderColor: "rgba(54, 162, 235, 1)",
-      borderWidth: 1,
-      hoverBackgroundColor: "rgba(54, 162, 235, 0.4)",
-      hoverBorderColor: "rgba(54, 162, 235, 1)",
-      data: [6000, 6000, 6000, 6000, 6000, 6000],
-    },
-    {
-      label: "Royalty",
-      backgroundColor: "rgba(255, 159, 64, 0.2)",
-      borderColor: "rgba(255, 159, 64, 1)",
-      borderWidth: 1,
-      hoverBackgroundColor: "rgba(255, 159, 64, 0.4)",
-      hoverBorderColor: "rgba(255, 159, 64, 1)",
-      data: [600, 600, 600, 600, 600, 600],
-    },
-  ],
-};
-
-function Dashboard() {
-  const doughnutRef = useRef(null);
-  const barRef = useRef(null);
-
-  useEffect(() => {
-    return () => {
-      // Destroy the chart instances when the component unmounts
-      if (doughnutRef.current) {
-        doughnutRef.current.destroy();
-      }
-      if (barRef.current) {
-        barRef.current.destroy();
-      }
-    };
-  }, []);
-
-  return (
-    <Stack spacing={4} padding={4}>
-      <Stack direction="row" spacing={4} backgroundColor="#f5f5f5" padding={4} borderRadius="8px" boxShadow={1}>
-        <Stack direction="row" spacing={4} width="100%">
-          <Card className="p-4 bg-gray-300 shadow">
-            <Typography variant="h6" color="blue-gray">
-              Total Franchise
-            </Typography>
-            <Typography variant="h3" color="blue-gray">
-              20
-            </Typography>
-          </Card>
-          <Card className="p-4 bg-gray-300 shadow">
-            <Typography variant="h6" color="blue-gray">
-              Total Sales
-            </Typography>
-            <Typography variant="h3" color="blue-gray">
-              $90,000
-            </Typography>
-          </Card>
-          <Card className="p-4 bg-gray-300 shadow">
-            <Typography variant="h6" color="blue-gray">
-              Total Royalty
-            </Typography>
-            <Typography variant="h3" color="blue-gray">
-              $6,000
-            </Typography>
-          </Card>
-        </Stack>
-      </Stack>
-      <Stack direction="row" spacing={4} backgroundColor="#f5f5f5" padding={4} borderRadius="8px" boxShadow={1}>
-        <Card className="p-4 bg-gray-300 shadow">
-          <Typography variant="h6" color="blue-gray">
-            Top Franchise
-          </Typography>
-          <Doughnut ref={doughnutRef} data={dataDoughnut} />
-        </Card>
-        <Card className="p-4 bg-gray-300 shadow">
-          <Typography variant="h6" color="blue-gray">
-            Top Sales Location
-          </Typography>
-          <Bar ref={barRef} data={dataBar} />
-        </Card>
-      </Stack>
-    </Stack>
-  );
-}
-
-export default Dashboard;*/
-
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Stack from "@mui/material/Stack"; // Import Stack from Material-UI
 import { Doughnut, Bar } from "react-chartjs-2";
-import { Typography } from "@material-tailwind/react";
+import { Typography, Button, TextField } from "@mui/material";
+import {
+  DataGrid,
+  GridToolbarContainer,
+  GridToolbarExport,
+} from "@mui/x-data-grid";
 import Chart from "chart.js/auto";
 
 // Styled Paper component for cards
@@ -128,8 +25,9 @@ const dataDoughnut = {
   labels: ["KFC", "Lorem ipsum", "Lorem ipsum"],
   datasets: [
     {
-      data: [60, 6, 0.5],
-      backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56"],
+      data: [60500, 6000, 500],
+      backgroundColor: ["#008000", "#0000FF", "#87CEEB"],
+
       hoverBackgroundColor: ["#36A2EB", "#FF6384", "#FFCE56"],
     },
   ],
@@ -152,53 +50,124 @@ const dataBar = {
       borderWidth: 1,
       hoverBackgroundColor: "rgba(54, 162, 235, 0.4)",
       hoverBorderColor: "rgba(54, 162, 235, 1)",
-      data: [6000, 5000, 4000, 3000, 2000, 1000],
+      data: [90000, 80000, 60000, 50000, 40000, 20000],
     },
     {
       label: "Royalty",
-      backgroundColor: "rgba(255, 159, 64, 0.2)",
+      backgroundColor: "#FF9F40",
       borderColor: "rgba(255, 159, 64, 1)",
       borderWidth: 1,
       hoverBackgroundColor: "rgba(255, 159, 64, 0.4)",
       hoverBorderColor: "rgba(255, 159, 64, 1)",
-      data: [600, 500, 400, 300, 200, 100],
+      data: [9000, 8000, 7000, 6000, 5000, 3000],
     },
   ],
 };
 
+const columns = [
+  { field: "id", headerName: "ID", width: 100 },
+  { field: "franchiseName", headerName: "Franchise Name", width: 200 },
+  { field: "franchisorName", headerName: "Franchisor Name", width: 200 },
+  { field: "city", headerName: "City", width: 150 },
+  { field: "sales", headerName: "Sales", width: 150 },
+  { field: "royalty", headerName: "Royalty", width: 150 },
+];
+
+const rows = [
+  {
+    id: "A101",
+    franchiseName: "Lorem ipsum dim eim",
+    franchisorName: "Lorem ipsum dim eim",
+    city: "Riyadh",
+    sales: "$60000",
+    royalty: "$6000",
+  },
+  {
+    id: "A102",
+    franchiseName: "KFC",
+    franchisorName: "Gladys Esther",
+    city: "Jeddah",
+    sales: "$60000",
+    royalty: "$6000",
+  },
+  {
+    id: "A103",
+    franchiseName: "Lorem ipsum dim eim",
+    franchisorName: "Lorem ipsum dim eim",
+    city: "Lorem ipsum dim",
+    sales: "$60000",
+    royalty: "$6000",
+  },
+  {
+    id: "A104",
+    franchiseName: "Lorem ipsum dim eim",
+    franchisorName: "Lorem ipsum dim eim",
+    city: "Jeddah",
+    sales: "$60000",
+    royalty: "$6000",
+  },
+];
+
+const CustomToolbar = () => (
+  <GridToolbarContainer>
+    <GridToolbarExport />
+    <Button variant="outlined" color="primary" sx={{ ml: 2 }}>
+      Filter
+    </Button>
+  </GridToolbarContainer>
+);
+
 export default function Dashboard() {
+  const [searchText, setSearchText] = React.useState("");
+  const [filteredRows, setFilteredRows] = React.useState(rows);
+
+  const handleSearch = (event) => {
+    const searchValue = event.target.value.toLowerCase();
+    setSearchText(searchValue);
+    const filtered = rows.filter(
+      (row) =>
+        row.franchiseName.toLowerCase().includes(searchValue) ||
+        row.franchisorName.toLowerCase().includes(searchValue) ||
+        row.city.toLowerCase().includes(searchValue)
+    );
+    setFilteredRows(filtered);
+  };
+
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: "#f0f0f0", padding: 9 }}>
+    <Box sx={{ flexGrow: 1, backgroundColor: "#f0f0f0", padding: 2 }}>
+      <Typography variant="h4" color="textPrimary" sx={{ mb: 1 }}>
+        Financial Overview
+      </Typography>
       <Grid container spacing={2}>
         {/* Row for Cards */}
-        <Grid item xs={9}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={4}>
+        <Grid item xs={12}>
+          <Grid container spacing={8}>
+            <Grid item xs={12} sm={4} md={4}>
               <Item>
-                <Typography variant="h6" color="blue-gray">
+                <Typography variant="h6" color="textSecondary">
                   Total Franchise
                 </Typography>
-                <Typography variant="h3" color="blue-gray">
+                <Typography variant="h4" color="textPrimary">
                   20
                 </Typography>
               </Item>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={4} md={4}>
               <Item>
-                <Typography variant="h6" color="blue-gray">
+                <Typography variant="h6" color="textSecondary">
                   Total Sales
                 </Typography>
-                <Typography variant="h3" color="blue-gray">
+                <Typography variant="h4" color="textPrimary">
                   $90,000
                 </Typography>
               </Item>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={4} md={4}>
               <Item>
-                <Typography variant="h6" color="blue-gray">
+                <Typography variant="h6" color="textSecondary">
                   Total Royalty
                 </Typography>
-                <Typography variant="h3" color="blue-gray">
+                <Typography variant="h4" color="textPrimary">
                   $6,000
                 </Typography>
               </Item>
@@ -207,25 +176,51 @@ export default function Dashboard() {
         </Grid>
 
         {/* Row for Charts */}
-        <Grid item xs={11}>
-          <Grid container spacing={4}>
-            <Grid item xs={5} sm={4}>
+        <Grid item xs={12}>
+          <Grid container spacing={8}>
+            <Grid item xs={9} sm={4}>
               <Item>
-                <Typography variant="h6" color="blue-gray">
+                <Typography variant="h6" color="textSecondary">
                   Top Franchise
                 </Typography>
                 <Doughnut data={dataDoughnut} />
               </Item>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={8} sm={7}>
               <Item>
-                <Typography variant="h6" color="blue-gray">
+                <Typography variant="h6" color="textSecondary">
                   Top Sales Location
                 </Typography>
                 <Bar data={dataBar} />
               </Item>
             </Grid>
           </Grid>
+        </Grid>
+
+        {/* Row for Table */}
+        <Grid item xs={12}>
+          <Item>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+            <div style={{ height: 400, width: "100%" }}>
+              <DataGrid
+                rows={filteredRows}
+                columns={columns}
+                pageSize={5}
+                checkboxSelection
+                components={{ Toolbar: CustomToolbar }}
+              />
+            </div>
+          </Item>
         </Grid>
       </Grid>
     </Box>
