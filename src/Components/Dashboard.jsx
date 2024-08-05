@@ -134,96 +134,129 @@ export default function Dashboard() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, backgroundColor: "#f0f0f0", padding: 2 }}>
-      <Typography variant="h4" color="textPrimary" sx={{ mb: 1 }}>
-        Financial Overview
-      </Typography>
-      <Grid container spacing={2}>
-        {/* Row for Cards */}
-        <Grid item xs={12}>
-          <Grid container spacing={8}>
-            <Grid item xs={12} sm={4} md={4}>
-              <Item>
-                <Typography variant="h6" color="textSecondary">
-                  Total Franchise
-                </Typography>
-                <Typography variant="h4" color="textPrimary">
-                  20
-                </Typography>
-              </Item>
-            </Grid>
-            <Grid item xs={12} sm={4} md={4}>
-              <Item>
-                <Typography variant="h6" color="textSecondary">
-                  Total Sales
-                </Typography>
-                <Typography variant="h4" color="textPrimary">
-                  $90,000
-                </Typography>
-              </Item>
-            </Grid>
-            <Grid item xs={12} sm={4} md={4}>
-              <Item>
-                <Typography variant="h6" color="textSecondary">
-                  Total Royalty
-                </Typography>
-                <Typography variant="h4" color="textPrimary">
-                  $6,000
-                </Typography>
-              </Item>
+    <div className="mt-20 w-[80%] ml-auto">
+      <Box sx={{ flexGrow: 1, backgroundColor: "#FAFBFA", padding: 2 }}>
+        <Typography variant="h4" color="textPrimary" sx={{ mb: 1 }}>
+          Financial Overview
+        </Typography>
+        <Grid container spacing={2}>
+          {/* Row for Cards */}
+          <Grid item xs={12}>
+            <Grid container spacing={8}>
+              <Grid item xs={12} sm={4} md={4}>
+                <Item>
+                  <Typography
+                    className="text-left"
+                    variant="h6"
+                    color="textSecondary"
+                  >
+                    Total Franchise
+                  </Typography>
+                  <Typography
+                    className="text-left"
+                    variant="h4"
+                    color="textPrimary"
+                  >
+                    20
+                  </Typography>
+                </Item>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4}>
+                <Item>
+                  <Typography
+                    className="text-left"
+                    variant="h6"
+                    color="textSecondary"
+                  >
+                    Total Sales
+                  </Typography>
+                  <Typography
+                    variant="h4"
+                    className="text-left"
+                    color="textPrimary"
+                  >
+                    $90,000
+                  </Typography>
+                </Item>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4}>
+                <Item>
+                  <Typography
+                    variant="h6"
+                    className="text-left"
+                    color="textSecondary"
+                  >
+                    Total Royalty
+                  </Typography>
+                  <Typography
+                    className="text-left"
+                    variant="h4"
+                    color="textPrimary"
+                  >
+                    $6,000
+                  </Typography>
+                </Item>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        {/* Row for Charts */}
-        <Grid item xs={12}>
-          <Grid container spacing={8}>
-            <Grid item xs={9} sm={4}>
-              <Item>
-                <Typography variant="h6" color="textSecondary">
-                  Top Franchise
-                </Typography>
-                <Doughnut data={dataDoughnut} />
-              </Item>
-            </Grid>
-            <Grid item xs={8} sm={7}>
-              <Item>
-                <Typography variant="h6" color="textSecondary">
-                  Top Sales Location
-                </Typography>
-                <Bar data={dataBar} />
-              </Item>
+          {/* Row for Charts */}
+          <Grid item xs={12}>
+            <Grid container spacing={8}>
+              <Grid item xs={9} sm={4}>
+                <Item>
+                  <Typography variant="h6" color="textSecondary">
+                    Top Franchise
+                  </Typography>
+                  <Doughnut data={dataDoughnut} />
+                </Item>
+              </Grid>
+              <Grid item xs={8} sm={7}>
+                <Item>
+                  <Typography variant="h6" color="textSecondary">
+                    Top Sales Location
+                  </Typography>
+                  <Bar data={dataBar} />
+                </Item>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        {/* Row for Table */}
-        <Grid item xs={12}>
-          <Item>
-            <form className="d-flex flex item-center justify-center gap-2 mb-3 " role="search">
-              <input
-                className="form-control me-2 border rounded-lg pl-3 "
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-         
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-            <div style={{ height: 400, width: "100%" }}>
-              <DataGrid
-                rows={filteredRows}
-                columns={columns}
-                pageSize={5}
-                checkboxSelection
-                components={{ Toolbar: CustomToolbar }}
-              />
-            </div>
-          </Item>
+          {/* Row for Table */}
+          <Grid item xs={12}>
+            <Item>
+              <form
+                className="d-flex flex item-center justify-between gap-2 mb-3 "
+                role="search"
+              >
+                <input
+                  className="form-control me-2 border rounded-lg pl-3 "
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <div className="flex gap-3">
+                  <button className="border px-5 py-2 rounded-lg" >
+                    Export
+                  </button>
+                  <button className="border px-5 py-2 rounded-lg" >
+                    Filter
+                  </button>
+                </div>
+              </form>
+              <div style={{ height: 400, width: "100%" }}>
+                <DataGrid
+                  rows={filteredRows}
+                  columns={columns}
+                  pageSize={5}
+                  checkboxSelection
+                  components={{ Toolbar: CustomToolbar }}
+                />
+              </div>
+            </Item>
+          </Grid>
         </Grid>
-      </Grid>
-    </Box>
+      </Box>
+    </div>
   );
 }

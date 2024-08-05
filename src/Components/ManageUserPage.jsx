@@ -7,7 +7,7 @@ const ManageUserPage = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { 
     e.preventDefault();
     // Handle form submission logic here
     console.log("Form submitted:", { firstName, lastName, email, password });
