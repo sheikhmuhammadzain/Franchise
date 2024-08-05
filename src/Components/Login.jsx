@@ -12,11 +12,22 @@ function Login() {
 
   return (
     <>
-      <div className=  {!forgot?'fixed  inset-0 grid place-items-center bg-[#3d3d3d91] bg-white z-20':'hidden'}  >
+      <div
+        className={
+          !forgot
+            ? "fixed  inset-0 grid place-items-center bg-[#3d3d3d91] bg-white z-10"
+            : "hidden"
+        }
+      >
         <div className="bg-white min-w-[50vw] rounded-lg">
           <div className="flex justify-between items-center gap-20 bg-gray-50 px-10 py-6 rounded-lg">
             <h1 className="font-bold text-2xl">Forgot Password</h1>
-            <p className="font-bold cusor-pointer" onClick={() => setforgot(true)}>X</p>
+            <p
+              className="font-bold cusor-pointer"
+              onClick={() => setforgot(true)}
+            >
+              X
+            </p>
           </div>
           <div className="p-10 ">
             <h1 className="mb-3">Confirm Email Adress</h1>
@@ -26,7 +37,12 @@ function Login() {
               className=" border px-2 block w-full py-4 rounded-lg"
             />
             <div className="flex justify-end py-6 gap-8">
-              <button className="font-bold border px-3 rounded-lg text-gray-600 " onClick={()=>setforgot(true)}>Cancel</button>
+              <button
+                className="font-bold border px-3 rounded-lg text-gray-600 "
+                onClick={() => setforgot(true)}
+              >
+                Cancel
+              </button>
               <button className="btn btn-primary">Send Reset Link</button>
             </div>
           </div>
@@ -96,7 +112,10 @@ function Login() {
               Sign In
             </button>
           </form>
-          <div className="text-center mt-4 underline cursor-pointer" onClick={()=>setforgot(false)}>
+          <div
+            className="text-center mt-4 underline cursor-pointer"
+            onClick={() => setforgot(false)}
+          >
             Forgot password?
           </div>
         </div>
