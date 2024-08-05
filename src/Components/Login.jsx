@@ -15,7 +15,7 @@ function Login() {
       <div
         className={
           !forgot
-            ? "fixed  inset-0 grid place-items-center bg-[#3d3d3d91] bg-white z-10"
+            ? "fixed  inset-0 grid place-items-center bg-[#3d3d3d91] z-10"
             : "hidden"
         }
       >
