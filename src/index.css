@@ -2,3 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+.MuiDataGrid-root {
+  border: 1px solid #e0e0e0;
+}
+
+.MuiDataGrid-cell {
+  padding: 12px;
+  font-size: 14px;
+}
+
+.MuiDataGrid-columnHeaderTitle {
+  font-weight: bold;
+}
+
+.MuiDataGrid-virtualScrollerContent {
+  background-color: #fff;
+}
+
+.MuiDataGrid-row {
+  background-color: #fff;
+}
+
+.MuiDataGrid-row:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.MuiDataGrid-row:hover {
+  background-color: #e0e0e0;
+}
+
+.MuiDataGrid-columnHeader {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: bold;
+}
+
+.MuiDataGrid-columnHeader:hover {
+  background-color: #e0e0e0;
+}
