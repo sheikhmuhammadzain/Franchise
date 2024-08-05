@@ -51,7 +51,7 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
       {buttons.map((button) => (
         <div
           key={button.id}
-          className={`flex items-center px-3 active:bg-blue-50 font-bold rounded mx-3 cursor-pointer ${
+          className={`flex items-center px-3 active:bg-blue-50 font-bold rounded mx-3 cursor-pointer hover:bg-[#F2F4FF]  hover:text-blue-400 ${
             activeButton === button.id
               ? "bg-[#F2F4FF] text-blue-400"
               : "bg-white text-gray-900"
