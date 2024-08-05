@@ -90,7 +90,7 @@ const FinancialOverview = () => {
   ];
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen w-[80%] ml-auto mt-[80px]">
+    <div className="p-6 bg-[#FAFBFA] min-h-screen w-[80%] ml-auto mt-[80px]">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Financial Overview</h1>
         <select className="p-2 border rounded">
