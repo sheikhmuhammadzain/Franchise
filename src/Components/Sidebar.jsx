@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { FiUsers } from "react-icons/fi";
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
@@ -30,7 +30,6 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
       id: "technicalRequests",
       icon: <BsWindowPlus className="text-xl" />,
       text: "Technical Requests",
-      
     },
   ];
 
@@ -48,25 +47,25 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
           onClick={toggleSidebar}
         />
       </div>
-      {buttons.map((button) => (
-        <div
-          key={button.id}
-          className={`flex items-center px-3 active:bg-blue-50 font-bold rounded mx-3 cursor-pointer hover:bg-[#F2F4FF]  hover:text-blue-400 ${
-            activeButton === button.id
-              ? "bg-[#F2F4FF] text-blue-400"
-              : "bg-white text-gray-900"
-          }`}
-          onClick={() => onButtonClick(button.id)}
-        >
-          {button.icon}
-          {button.linkTo ? (
-            <Link to={button.linkTo}>
+      {buttons.map((button,index) => (
+        <Link key={index} to={button.linkTo}>
+          <div
+            key={button.id}
+            className={`flex items-center px-3 active:bg-blue-50 font-bold rounded mx-3 cursor-pointer hover:bg-[#F2F4FF]  hover:text-blue-400 ${
+              activeButton === button.id
+                ? "bg-[#F2F4FF] text-blue-400"
+                : "bg-white text-gray-900"
+            }`}
+            onClick={() => onButtonClick(button.id)}
+          >
+            {button.icon}
+            {button.linkTo ? (
               <h2 className="p-3">{button.text}</h2>
-            </Link>
-          ) : (
-            <h2 className="p-3">{button.text}</h2>
-          )}
-        </div>
+            ) : (
+              <h2 className="p-3">{button.text}</h2>
+            )}
+          </div>
+        </Link>
       ))}
     </aside>
   );

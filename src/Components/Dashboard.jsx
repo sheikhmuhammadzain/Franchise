@@ -1,262 +1,168 @@
-import * as React from "react";
-import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import { Doughnut, Bar } from "react-chartjs-2";
-import { Typography, Button, TextField } from "@mui/material";
+  import { Doughnut, Bar } from "react-chartjs-2";
 import {
-  DataGrid,
-  GridToolbarContainer,
-  GridToolbarExport,
-} from "@mui/x-data-grid";
-import Chart from "chart.js/auto";
+  Chart as ChartJS,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-// Styled Paper component for cards
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "#fff", // White background for cards
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-
-const dataDoughnut = {
-  labels: ["KFC", "Lorem ipsum", "Lorem ipsum"],
-  datasets: [
-    {
-      data: [60500, 6000, 500],
-      backgroundColor: ["#008000", "#0000FF", "#87CEEB"],
-
-      hoverBackgroundColor: ["#36A2EB", "#FF6384", "#FFCE56"],
-    },
-  ],
-};
-
-const dataBar = {
-  labels: [
-    "Abu Dhabi",
-    "Dubai",
-    "Sharjah",
-    "Ajman",
-    "Lorem ipsum",
-    "Lorem ipsum",
-  ],
-  datasets: [
-    {
-      label: "Sales",
-      backgroundColor: "rgba(54, 162, 235, 0.2)",
-      borderColor: "rgba(54, 162, 235, 1)",
-      borderWidth: 1,
-      hoverBackgroundColor: "rgba(54, 162, 235, 0.4)",
-      hoverBorderColor: "rgba(54, 162, 235, 1)",
-      data: [90000, 80000, 60000, 50000, 40000, 20000],
-    },
-    {
-      label: "Royalty",
-      backgroundColor: "#FF9F40",
-      borderColor: "rgba(255, 159, 64, 1)",
-      borderWidth: 1,
-      hoverBackgroundColor: "rgba(255, 159, 64, 0.4)",
-      hoverBorderColor: "rgba(255, 159, 64, 1)",
-      data: [9000, 8000, 7000, 6000, 5000, 3000],
-    },
-  ],
-};
-
-const columns = [
-  { field: "id", headerName: "ID", width: 100 },
-  { field: "franchiseName", headerName: "Franchise Name", width: 200 },
-  { field: "franchisorName", headerName: "Franchisor Name", width: 200 },
-  { field: "city", headerName: "City", width: 150 },
-  { field: "sales", headerName: "Sales", width: 150 },
-  { field: "royalty", headerName: "Royalty", width: 150 },
-];
-
-const rows = [
-  {
-    id: "A101",
-    franchiseName: "Lorem ipsum dim eim",
-    franchisorName: "Lorem ipsum dim eim",
-    city: "Riyadh",
-    sales: "$60000",
-    royalty: "$6000",
-  },
-  {
-    id: "A102",
-    franchiseName: "KFC",
-    franchisorName: "Gladys Esther",
-    city: "Jeddah",
-    sales: "$60000",
-    royalty: "$6000",
-  },
-  {
-    id: "A103",
-    franchiseName: "Lorem ipsum dim eim",
-    franchisorName: "Lorem ipsum dim eim",
-    city: "Lorem ipsum dim",
-    sales: "$60000",
-    royalty: "$6000",
-  },
-  {
-    id: "A104",
-    franchiseName: "Lorem ipsum dim eim",
-    franchisorName: "Lorem ipsum dim eim",
-    city: "Jeddah",
-    sales: "$60000",
-    royalty: "$6000",
-  },
-];
-
-const CustomToolbar = () => (
-  <GridToolbarContainer>
-    <GridToolbarExport />
-    <Button variant="outlined" color="primary" sx={{ ml: 2 }}>
-      Filter
-    </Button>
-  </GridToolbarContainer>
+ChartJS.register(
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
 );
 
-export default function Dashboard() {
-  const [searchText, setSearchText] = React.useState("");
-  const [filteredRows, setFilteredRows] = React.useState(rows);
-
-  const handleSearch = (event) => {
-    const searchValue = event.target.value.toLowerCase();
-    setSearchText(searchValue);
-    const filtered = rows.filter(
-      (row) =>
-        row.franchiseName.toLowerCase().includes(searchValue) ||
-        row.franchisorName.toLowerCase().includes(searchValue) ||
-        row.city.toLowerCase().includes(searchValue)
-    );
-    setFilteredRows(filtered);
+const FinancialOverview = () => {
+  const doughnutData = {
+    datasets: [
+      {
+        data: [60000, 5600, 1000],
+        backgroundColor: ["#4ade80", "#3b82f6", "#f97316"],
+      },
+    ],
+    labels: ["KFC", "Lorem Ipsum", "Lorem Ipsum"],
   };
 
+  const barData = {
+    labels: [
+      "Abu Dhabi",
+      "Dubai",
+      "Sharjah",
+      "Ajman",
+      "Lorem ipsum",
+      "Lorem ipsum",
+    ],
+    datasets: [
+      {
+        label: "Sales",
+        data: [6000, 5000, 3000, 2000, 2000, 1000],
+        backgroundColor: "#3b82f6",
+      },
+      {
+        label: "Royalty",
+        data: [500, 400, 300, 200, 200, 100],
+        backgroundColor: "#f97316",
+      },
+    ],
+  };
+
+  const tableData = [
+    {
+      id: "A101",
+      franchiseName: "Lorem ipsum dolor sim",
+      franchisorName: "Lorem ipsum dolor sim",
+      city: "Riyadh",
+      sales: 6000,
+      royalty: 500,
+    },
+    {
+      id: "A101",
+      franchiseName: "KFC",
+      franchisorName: "Collins Esther",
+      city: "Jeddah",
+      sales: 5000,
+      royalty: 400,
+    },
+    {
+      id: "A101",
+      franchiseName: "Lorem ipsum dolor sim",
+      franchisorName: "Lorem ipsum dolor",
+      city: "Jeddah",
+      sales: 5000,
+      royalty: 400,
+    },
+    {
+      id: "A101",
+      franchiseName: "Lorem ipsum dolor sim",
+      franchisorName: "Lorem ipsum dolor",
+      city: "Jeddah",
+      sales: 5000,
+      royalty: 400,
+    },
+  ];
+
   return (
-    <div className="mt-20 w-[80%] ml-auto">
-      <Box sx={{ flexGrow: 1, backgroundColor: "#FAFBFA", padding: 2 }}>
-        <Typography variant="h4" color="textPrimary" sx={{ mb: 1 }}>
-          Financial Overview
-        </Typography>
-        <Grid container spacing={2}>
-          {/* Row for Cards */}
-          <Grid item xs={12}>
-            <Grid container spacing={8}>
-              <Grid item xs={12} sm={4} md={4}>
-                <Item>
-                  <Typography
-                    className="text-left"
-                    variant="h6"
-                    color="textSecondary"
-                  >
-                    Total Franchise
-                  </Typography>
-                  <Typography
-                    className="text-left"
-                    variant="h4"
-                    color="textPrimary"
-                  >
-                    20
-                  </Typography>
-                </Item>
-              </Grid>
-              <Grid item xs={12} sm={4} md={4}>
-                <Item>
-                  <Typography
-                    className="text-left"
-                    variant="h6"
-                    color="textSecondary"
-                  >
-                    Total Sales
-                  </Typography>
-                  <Typography
-                    variant="h4"
-                    className="text-left"
-                    color="textPrimary"
-                  >
-                    $90,000
-                  </Typography>
-                </Item>
-              </Grid>
-              <Grid item xs={12} sm={4} md={4}>
-                <Item>
-                  <Typography
-                    variant="h6"
-                    className="text-left"
-                    color="textSecondary"
-                  >
-                    Total Royalty
-                  </Typography>
-                  <Typography
-                    className="text-left"
-                    variant="h4"
-                    color="textPrimary"
-                  >
-                    $6,000
-                  </Typography>
-                </Item>
-              </Grid>
-            </Grid>
-          </Grid>
+    <div className="p-6 bg-gray-100 min-h-screen w-[80%] ml-auto mt-[80px]">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Financial Overview</h1>
+        <select className="p-2 border rounded">
+          <option>Yearly</option>
+        </select>
+      </div>
 
-          {/* Row for Charts */}
-          <Grid item xs={12}>
-            <Grid container spacing={8}>
-              <Grid item xs={9} sm={4}>
-                <Item>
-                  <Typography variant="h6" color="textSecondary">
-                    Top Franchise
-                  </Typography>
-                  <Doughnut data={dataDoughnut} />
-                </Item>
-              </Grid>
-              <Grid item xs={8} sm={7}>
-                <Item>
-                  <Typography variant="h6" color="textSecondary">
-                    Top Sales Location
-                  </Typography>
-                  <Bar data={dataBar} />
-                </Item>
-              </Grid>
-            </Grid>
-          </Grid>
+      <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="bg-white p-4 rounded shadow">
+          <h2 className="text-sm text-gray-500">Total Franchise</h2>
+          <p className="text-2xl font-bold">20</p>
+        </div>
+        <div className="bg-white p-4 rounded shadow">
+          <h2 className="text-sm text-gray-500">Total Sales</h2>
+          <p className="text-2xl font-bold">$90,000</p>
+        </div>
+        <div className="bg-white p-4 rounded shadow">
+          <h2 className="text-sm text-gray-500">Total Royalty</h2>
+          <p className="text-2xl font-bold">$6000</p>
+        </div>
+      </div>
 
-          {/* Row for Table */}
-          <Grid item xs={12}>
-            <Item>
-              <form
-                className="d-flex flex item-center justify-between gap-2 mb-3 "
-                role="search"
-              >
-                <input
-                  className="form-control me-2 border rounded-lg pl-3 "
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <div className="flex gap-3">
-                  <button className="border px-5 py-2 rounded-lg" >
-                    Export
-                  </button>
-                  <button className="border px-5 py-2 rounded-lg" >
-                    Filter
-                  </button>
-                </div>
-              </form>
-              <div style={{ height: 400, width: "100%" }}>
-                <DataGrid
-                  rows={filteredRows}
-                  columns={columns}
-                  pageSize={5}
-                  checkboxSelection
-                  components={{ Toolbar: CustomToolbar }}
-                />
-              </div>
-            </Item>
-          </Grid>
-        </Grid>
-      </Box>
+      <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="bg-white p-4 rounded shadow">
+          <h2 className="text-lg font-semibold mb-4">Top Franchise</h2>
+          <Doughnut data={doughnutData} />
+        </div>
+        <div className="bg-white p-4 rounded shadow">
+          <h2 className="text-lg font-semibold mb-4">Top Sales Location</h2>
+          <Bar data={barData} />
+        </div>
+      </div>
+
+      <div className="bg-white p-4 rounded shadow">
+        <div className="flex justify-between items-center mb-4">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="p-2 border rounded"
+          />
+          <div>
+            <button className="mr-2 p-2 border rounded">Filter</button>
+            <button className="p-2 border rounded">Export</button>
+          </div>
+        </div>
+        <table className="w-full">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="p-2 text-left">ID</th>
+              <th className="p-2 text-left">Franchise Name</th>
+              <th className="p-2 text-left">Franchisor Name</th>
+              <th className="p-2 text-left">City</th>
+              <th className="p-2 text-left">Sales</th>
+              <th className="p-2 text-left">Royalty</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableData.map((row, index) => (
+              <tr key={index} className="border-b">
+                <td className="p-2">{row.id}</td>
+                <td className="p-2">{row.franchiseName}</td>
+                <td className="p-2">{row.franchisorName}</td>
+                <td className="p-2">{row.city}</td>
+                <td className="p-2">${row.sales}</td>
+                <td className="p-2">${row.royalty}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
-}
+};
+
+export default FinancialOverview;
