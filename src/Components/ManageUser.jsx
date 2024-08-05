@@ -111,32 +111,32 @@ const handleSubmit = (event) => {
       </div>
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
-        <ul className="flex border-b gap-3">
-          <li className="flex-1 text-center border-b-2 border-blue-500 font-bold">
+        <ul className="flex  border-b gap-8">
+          <li className=" pb-3 text-center border-b-2 border-blue-500 font-bold">
             Franchisor
           </li>
-          <li className="flex-1 text-center">Franchisee</li>
-          <li className="flex-1 text-center">Sales</li>
+          <li className=" text-center">Franchisee</li>
+          <li className=" text-center">Sales</li>
         </ul>
         <div className="grid grid-cols-3 gap-4 my-3">
-          <div className="bg-white border shadow p-9 rounded-lg">
-            <Typography variant="h6" className="font-bold mb-2">
+          <div className="bg-white border shadow p-3 rounded-lg">
+            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
               Total Franchisor
             </Typography>
             <Typography variant="h4" className="font-bold">
               {rows.length}
             </Typography>
           </div>
-          <div className="bg-white border shadow p-9 rounded-lg">
-            <Typography variant="h6" className="font-bold mb-2">
+          <div className="bg-white border shadow p-5 rounded-lg">
+            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
               Pro Plan
             </Typography>
             <Typography variant="h4" className="font-bold">
               {rows.filter((row) => row.plan === "Pro").length}
             </Typography>
           </div>
-          <div className="bg-white border shadow p-9 rounded-lg">
-            <Typography variant="h6" className="font-bold mb-2">
+          <div className="bg-white border shadow p-3 rounded-lg">
+            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
               Basic Plan
             </Typography>
             <Typography variant="h4" className="font-bold">
