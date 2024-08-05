@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import { Link } from "react-router-dom";
 import {
   Button,
   Dialog,
@@ -83,20 +84,20 @@ function ManageUser() {
     });
   };
 
-const handleSubmit = (event) => {
-  event.preventDefault(); // Prevent default form submission
-  const newId =
-    rows.length > 0 ? Math.max(...rows.map((row) => row.id)) + 1 : 1;
-  // Update the rows state directly with the new franchisee
-  setRows([
-    ...rows,
-    {
-      id: newId,
-      ...newFranchisee,
-    },
-  ]);
-  handleCloseDialog();
-};
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    const newId =
+      rows.length > 0 ? Math.max(...rows.map((row) => row.id)) + 1 : 1;
+    // Update the rows state directly with the new franchisee
+    setRows([
+      ...rows,
+      {
+        id: newId,
+        ...newFranchisee,
+      },
+    ]);
+    handleCloseDialog();
+  };
   const handleRowSelection = (selectionModel) => {
     setSelectedRows(selectionModel);
   };
@@ -104,7 +105,7 @@ const handleSubmit = (event) => {
   return (
     <div className="bg-gray-50 p-4 rounded-lg shadow-md h-screen w-full ml-auto flex-1">
       <div className="flex justify-between items-center  my-9">
-        <h2 className="text-2xl font-bold">Manage User</h2>
+        <h2 className="text-xl font-semibold ml-2">Manage User</h2>
         <Button variant="contained" color="primary" onClick={handleOpenDialog}>
           + Add Franchisor
         </Button>
@@ -115,8 +116,14 @@ const handleSubmit = (event) => {
           <li className=" pb-3 text-center border-b-2 border-blue-500 font-bold">
             Franchisor
           </li>
-          <li className=" text-center">Franchisee</li>
-          <li className=" text-center">Sales</li>
+          <Link to="/franchise">
+            {" "}
+            <li className=" text-center">Franchisee</li>
+          </Link>
+
+          <Link to="sales">
+            <li className=" text-center">Sales</li>
+          </Link>
         </ul>
         <div className="grid grid-cols-3 gap-4 my-3">
           <div className="bg-white border shadow p-3 rounded-lg">
