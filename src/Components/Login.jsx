@@ -12,7 +12,7 @@ function Login() {
 
   return (
     <>
-      <div className=  {!forgot?'fixed inset-0 grid place-items-center bg-[#22222291] bg-white z-20':'hidden'}  >
+      <div className=  {!forgot?'fixed  inset-0 grid place-items-center bg-[#3d3d3d91] bg-white z-20':'hidden'}  >
         <div className="bg-white min-w-[50vw] rounded-lg">
           <div className="flex justify-between items-center gap-20 bg-gray-50 px-10 py-6 rounded-lg">
             <h1 className="font-bold text-2xl">Forgot Password</h1>
