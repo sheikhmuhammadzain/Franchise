@@ -4,7 +4,7 @@ import { FaUser } from "react-icons/fa";
 const Header = () => {
   return (
     <div
-      className="w-100 border w-full h-15 shadow-md fixed top-0 left-0 z-1 bg-white
+      className="w-100 border w-full h-15 shadow-md fixed top-0 left-0 z-20 bg-white
      "
     >
       <div className="flex items-center justify-end p-4 gap-3">

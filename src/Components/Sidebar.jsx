@@ -36,7 +36,7 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
 
   return (
     <aside
-      className={`fixed top-0 left-0 h-screen bg-white z-10 shadow-lg transition-transform transform ${
+      className={`fixed top-0 left-0 h-screen bg-white z-30 shadow-lg transition-transform transform ${
         isOpen ? "translate-x-0" : "-translate-x-[80%]"
       }`}
       style={{ width: "20%" }}
