@@ -3,7 +3,7 @@ function ManageUser() {
   return (
     <div className="bg-gray-50 p-4 rounded-lg shadow-md h-screen w-full ml-auto flex-1">
       <div className="flex justify-between items-center  my-9">
-        <h2 className="text-xl font-bold">Manage User</h2>
+        <h2 className="text-2xl font-bold">Manage User</h2>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
           + Add Franchisor
         </button>

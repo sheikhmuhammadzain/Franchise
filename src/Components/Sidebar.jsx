@@ -30,6 +30,7 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
       id: "technicalRequests",
       icon: <BsWindowPlus className="text-xl" />,
       text: "Technical Requests",
+      linkTo: "/technical",
     },
   ];
 
@@ -51,7 +52,7 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
         <Link key={index} to={button.linkTo}>
           <div
             key={button.id}
-            className={`flex items-center px-3 active:bg-blue-50 font-bold rounded mx-3 cursor-pointer hover:bg-[#F2F4FF]  hover:text-blue-400 ${
+            className={`flex text-sm lg:text-lg items-center px-3 active:bg-blue-50 font-bold rounded mx-3 cursor-pointer hover:bg-[#F2F4FF]  hover:text-blue-400 ${
               activeButton === button.id
                 ? "bg-[#F2F4FF] text-blue-400"
                 : "bg-white text-gray-900"
@@ -60,7 +61,7 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
           >
             {button.icon}
             {button.linkTo ? (
-              <h2 className="p-3">{button.text}</h2>
+              <h2 className="p-3 text-sm min-w-fit">{button.text}</h2>
             ) : (
               <h2 className="p-3">{button.text}</h2>
             )}

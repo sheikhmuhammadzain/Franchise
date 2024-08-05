@@ -9,6 +9,7 @@ import AdminPage from "./Components/AdminPage.jsx";
 import FranchisePage from "./Components/FranchisePage.jsx";
 import Sales from "./Components/Sales.jsx";
 import Tables from "./Components/Tables.jsx";
+import TechnicalPage from "./Components/TechnicalPage.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/tables",
     element: <Tables />,
+  },
+  {
+    path: "/technical",
+    element: <TechnicalPage />,
   },
 ]);
 
