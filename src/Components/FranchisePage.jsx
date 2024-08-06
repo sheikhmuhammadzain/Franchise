@@ -1,13 +1,11 @@
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import { Link } from "react-router-dom";
-
+import {Link} from 'react-router-dom'
 const FranchisePage = () => {
   return (
     <div>
       <Header />
       <Sidebar />
-
       <main className="bg-[#FAFBFA] min-h-screen ">
         <div className="container max-w-[80%] ml-auto px-7 ">
           <div className="flex items-center justify-between pt-[100px]  ">

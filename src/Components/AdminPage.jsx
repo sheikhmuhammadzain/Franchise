@@ -9,7 +9,7 @@ const AdminPage = () => {
      setActiveButton(buttonId);
    };
   return (
-    <div className="flex">
+    <div className="flex bg-gray-50">
       <div>
         <Sidebar
           activeButton={activeButton}
@@ -18,10 +18,9 @@ const AdminPage = () => {
       </div>
       <div className="flex-1 ">
         <Header />
-        <div className="h-screen max-w-[100%] bg-[#FAFBFA]">
+        <div className="min-h-screen w-[calc(100%-220px)] ml-auto  mt-[80px] bg-[#FAFBFA]">
           <Dashboard />
         </div>
-        
       </div>
     </div>
   );

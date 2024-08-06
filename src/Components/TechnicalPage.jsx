@@ -18,7 +18,7 @@ const TechnicalPage = () => {
       </div>
       <div className="flex-1 ">
         <Header />
-        <div className="h-screen max-w-[80%] ml-auto mt-[80px] bg-[#FAFBFA]">
+        <div className="h-screen w-[calc(100%-200px)] ml-auto px-3 mt-[80px] bg-[#FAFBFA]">
           <TechnicalRequest />
         </div>
       </div>

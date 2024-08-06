@@ -91,7 +91,7 @@ const FinancialOverview = () => {
   ];
 
   return (
-    <div className="p-6 bg-[#FAFBFA] min-h-screen w-[80%] ml-auto mt-[80px]">
+    <div className="p-6 bg-[#FAFBFA] min-h-screen">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Financial Overview</h1>
         <select className="p-2 border rounded">
@@ -125,10 +125,9 @@ const FinancialOverview = () => {
           <h2 className="text-lg font-semibold mb-4">Top Sales Location</h2>
           <Bar data={barData} />
         </div>
-
       </div>
 
-      <Tables/>
+      <Tables />
     </div>
   );
 };

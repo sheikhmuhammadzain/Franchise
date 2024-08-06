@@ -106,7 +106,8 @@ const ManageUserPage = () => {
                 />
               </div>
               <div className="flex justify-end">
-                <button onClick={()=>setvisibleForm(false)}
+                <button
+                  onClick={() => setvisibleForm(false)}
                   type="button"
                   className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
                 >
@@ -125,8 +126,8 @@ const ManageUserPage = () => {
       </div>
 
       <main className="bg-[#FAFBFA] min-h-screen ">
-        <div className="container max-w-[83%] ml-auto mt-[45px] px-7 ">
-          <ManageUser/>
+        <div className="container w-[calc(100%-200px)] ml-auto mt-[70px] px-4 ">
+          <ManageUser />
         </div>
       </main>
     </>
