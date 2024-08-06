@@ -10,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import Tables from "./Tables";
+import SearchPanel from "./SearchPanel";
 
 ChartJS.register(
   ArcElement,
@@ -96,6 +97,8 @@ const FinancialOverview = () => {
         <h1 className="text-2xl font-bold">Financial Overview</h1>
         <select className="p-2 border rounded">
           <option>Yearly</option>
+          <option>Monthly</option>
+          <option>Daily</option>
         </select>
       </div>
 
@@ -126,8 +129,10 @@ const FinancialOverview = () => {
           <Bar data={barData} />
         </div>
       </div>
-
-      <Tables />
+      <div className="bg-white p-2 rounded-lg">
+        <SearchPanel />
+        <Tables />
+      </div>
     </div>
   );
 };

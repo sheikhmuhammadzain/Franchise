@@ -1,4 +1,5 @@
 import  { useState } from "react";
+import SearchPanel from "./SearchPanel";
 import {
   Table,
   TableBody,
@@ -70,8 +71,10 @@ const TechnicalRequests = () => {
           <p className="text-2xl font-bold">$6000</p>
         </div>
       </div>
-
-      <Tables />
+      <div className="bg-white p-2 rounded-lg">
+        <SearchPanel />
+        <Tables />
+      </div>
     </div>
   );
 };
