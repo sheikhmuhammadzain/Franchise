@@ -425,7 +425,7 @@ function ManageUser() {
       </div>
 
       {openDialog && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed z-[32] inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold">Add Franchisor</h2>
