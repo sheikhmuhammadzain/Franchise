@@ -208,7 +208,7 @@ function ManageUser() {
   };
 
   return (
-    <div className="bg-gray-50 p-4 rounded-lg shadow-md h-screen w-full ml-auto flex-1">
+    <div className="bg-gray-50 p-4 rounded-lg shadow-md min-h-screen w-full ml-auto flex-1">
       <div className="flex justify-between items-center  my-9">
         <h2 className="text-xl font-semibold ml-2">Manage User</h2>
         <Button variant="contained" color="primary" onClick={handleOpenDialog}>

@@ -125,7 +125,7 @@ const ManageUserPage = () => {
       </div>
 
       <main className="bg-[#FAFBFA] min-h-screen ">
-        <div className="container max-w-[82%] ml-auto mt-[45px] px-7 ">
+        <div className="container max-w-[83%] ml-auto mt-[45px] px-7 ">
           <ManageUser/>
         </div>
       </main>
