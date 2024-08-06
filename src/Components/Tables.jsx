@@ -295,11 +295,11 @@ function Table() {
 
 
       <div
-          className={`fixed inset-0 bg-[#1a1a1a3d] z-50 flex justify-center items-center ${
+          className={`fixed inset-0 bg-[#1a1a1a3d] z-50 flex  justify-center items-center ${
             Reset ? "block" : "hidden"
           }`}
         >
-          <div className="bg-white rounded-lg p-6">
+          <div className="bg-white rounded-lg min-w-[500px] p-6">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
               onClick={() => setReset(false)}
@@ -330,7 +330,7 @@ function Table() {
               className="flex   
  justify-end"
             >
-              <button onClick={()=>setReset(false)} className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded mr-4">
+              <button onClick={()=>setReset(false)} className="border hover:bg-gray-300 text-gray-400 font-bold py-2 px-4 rounded mr-4">
                 Cancel  
               </button>
               <button onClick={() => setReset(false)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
