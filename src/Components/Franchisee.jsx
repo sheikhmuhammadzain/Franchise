@@ -2,7 +2,7 @@ import { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { IoFilterOutline } from "react-icons/io5";
 import { RiDownloadLine } from "react-icons/ri";
-import Tables from './Tables'
+import Tables from "./Tables";
 // ... (other imports remain the same)
 import {
   Accordion,
@@ -34,7 +34,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../index.css";
 
-function ManageUser() {
+function Franchisee() {
   const [openDialog, setOpenDialog] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -215,7 +215,7 @@ function ManageUser() {
   };
 
   return (
-    <div className="bg-gray-50 p-4 rounded-lg  min-h-screen w-[calc(100%-200px)] mt-[80px] px-8 ml-auto flex-1">
+    <div className="bg-gray-50 p-4 rounded-lg w-[calc(100%-200px)] px-8  min-h-screen mt-[80px] ml-auto flex-1">
       <div
         className="flex flex-col lg:flex-row gap-3 justify-between items-center  my-2
     "
@@ -227,16 +227,19 @@ function ManageUser() {
       </div>
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
-        <ul className="flex flex-col lg:flex-row border-b gap-8">
-          <li className=" pb-3 text-center border-b-2 border-blue-500 font-bold">
-            Franchisor
-          </li>
-          <Link to="/franchise">
-            {" "}
-            <li className=" text-center">Franchisee</li>
+        <ul className="flex flex-col lg:flex-row gap-8">
+          <Link to="/">
+            <li className="  text-center border-b-2 ">Franchisor</li>
           </Link>
 
-          <Link to="sales">
+          <Link to="/franchise">
+            {" "}
+            <li className=" text-center font-bold pb-3 text-blue-500 border-b border-b-blue-500">
+              Franchisee
+            </li>
+          </Link>
+
+          <Link to="/sales">
             <li className=" text-center">Sales</li>
           </Link>
         </ul>
@@ -245,17 +248,17 @@ function ManageUser() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 mt-4 gap-4 mb-6">
           <div className="bg-white px-4 pb-9 pt-4 rounded shadow">
-            <h2 className="text-sm text-gray-500 pb-2">Total Franchise</h2>
+            <h2 className="text-sm text-gray-500 pb-2">Total Franchisee</h2>
             <p className="text-2xl font-bold"> {rows.length}</p>
           </div>
           <div className="bg-white px-4 pb-9 pt-4  rounded shadow">
-            <h2 className="text-sm text-gray-500">Total Sales</h2>
+            <h2 className="text-sm text-gray-500">Active Franchisee</h2>
             <p className="text-2xl font-bold">
               {rows.filter((row) => row.plan === "Pro").length}
             </p>
           </div>
           <div className="bg-white px-4 pb-9 pt-4  rounded shadow">
-            <h2 className="text-sm text-gray-500">Total Royalty</h2>
+            <h2 className="text-sm text-gray-500">Inactive Franchisee</h2>
             <p className="text-2xl font-bold">
               {rows.filter((row) => row.plan === "Basic").length}
             </p>
@@ -284,7 +287,6 @@ function ManageUser() {
                     <RiDownloadLine />
                   </button>
                 </div>
-
               </div>
               <form
                 className={
@@ -517,4 +519,4 @@ function ManageUser() {
   );
 }
 
-export default ManageUser;
+export default Franchisee;

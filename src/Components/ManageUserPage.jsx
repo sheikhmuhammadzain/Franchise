@@ -17,7 +17,7 @@ const ManageUserPage = () => {
     <>
      
       <main className="bg-[#FAFBFA] min-h-screen ">
-        <div className="container w-[calc(100%-200px)] ml-auto mt-[70px] px-4 ">
+        <div className="   ">
           <ManageUser />
         </div>
       </main>

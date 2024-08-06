@@ -67,7 +67,7 @@ function Table() {
   };
 
   return (
-    <div className="container mx-auto overflow-scroll bg-white p-2 rounded">
+    <div className="mx-auto overflow-scroll bg-white p-2 rounded">
       <table className="w-full border-collapse rounded">
         <thead>
           <tr className="bg-gray-50">
