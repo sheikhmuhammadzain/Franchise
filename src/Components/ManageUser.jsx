@@ -2,6 +2,7 @@ import { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { IoFilterOutline } from "react-icons/io5";
 import { RiDownloadLine } from "react-icons/ri";
+import Tables from './Tables'
 // ... (other imports remain the same)
 import {
   Accordion,
@@ -407,22 +408,10 @@ function ManageUser() {
               </form>
             </div>
           </div>
-
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={10}
-            rowsPerPageOptions={[5, 10, 20]}
-            checkboxSelection
-            onSelectionModelChange={handleRowSelection}
-            sx={{
-              "& .MuiDataGrid-columnHeaders": {
-                backgroundColor: "#FAFBFA",
-              },
-            }}
-          />
         </div>
+        <Tables />
       </div>
+      <div></div>
 
       {openDialog && (
         <div className="fixed z-[32] inset-0 flex items-center justify-center bg-black bg-opacity-50">
