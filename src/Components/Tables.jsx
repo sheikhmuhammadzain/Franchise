@@ -51,6 +51,7 @@ function Table() {
   ]);
 
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [Reset, setReset] = useState(false); // Set to false initially if you want to control opening from outside
 
   const handleDropdownOpen = (id) => {
     setOpenDropdown(id);
@@ -59,11 +60,11 @@ function Table() {
   const handleDropdownClose = () => {
     setOpenDropdown(null);
   };
-   const [isOpen, setIsOpen] = useState(false); // Set to false initially if you want to control opening from outside
+  const [isOpen, setIsOpen] = useState(false); // Set to false initially if you want to control opening from outside
 
-   const handleClose = () => {
-     setIsOpen(false);
-   };
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   const handleOptionClick = (id, option) => {
     console.log(`Option clicked for ID ${id}: ${option}`);
@@ -131,15 +132,13 @@ function Table() {
                       </li>
                       <li
                         className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={() =>
-                          handleOptionClick(row.id, "reset_password")
-                        }
+                        onClick={()=>setReset(true)} 
                       >
                         Reset password
                       </li>
                       <li
                         className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => handleOptionClick(row.id, "delete")}
+                        // onClick={()=>setIsResetOpen(true)}
                       >
                         Delete
                       </li>
@@ -288,7 +287,58 @@ function Table() {
             </button>
           </div>
         </div>
+
+        {/* resetpop */}
+        
       </div>
+
+
+
+      <div
+          className={`fixed inset-0 bg-[#1a1a1a3d] z-50 flex justify-center items-center ${
+            Reset ? "block" : "hidden"
+          }`}
+        >
+          <div className="bg-white rounded-lg p-6">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              onClick={() => setReset(false)}
+            > X
+            </button>  
+
+            {/* resetpasswordsection */}
+
+            <h2 className="text-lg font-semibold mb-4">Reset Password</h2>
+
+            <div className="mb-4">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Create Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500   
+ focus:ring-indigo-500 sm:text-sm"
+              />
+            </div>
+
+            <div
+              className="flex   
+ justify-end"
+            >
+              <button onClick={()=>setReset(false)} className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded mr-4">
+                Cancel  
+              </button>
+              <button onClick={() => setReset(false)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
