@@ -217,7 +217,7 @@ function ManageUser() {
   return (
     <div className="bg-gray-50 p-4 rounded-lg  min-h-screen w-full ml-auto flex-1">
       <div
-        className="flex justify-between items-center  my-2
+        className="flex flex-col lg:flex-row gap-3 justify-between items-center  my-2
     "
       >
         <h2 className="text-2xl font-bold ml-2 ">Manage User</h2>
@@ -227,7 +227,7 @@ function ManageUser() {
       </div>
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
-        <ul className="flex  border-b gap-8">
+        <ul className="flex flex-col lg:flex-row border-b gap-8">
           <li className=" pb-3 text-center border-b-2 border-blue-500 font-bold">
             Franchisor
           </li>
@@ -243,7 +243,7 @@ function ManageUser() {
 
         {/* seacrhdiv */}
 
-        <div className="grid grid-cols-3 mt-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 mt-4 gap-4 mb-6">
           <div className="bg-white px-4 pb-9 pt-4 rounded shadow">
             <h2 className="text-sm text-gray-500 pb-2">Total Franchise</h2>
             <p className="text-2xl font-bold"> {rows.length}</p>
@@ -264,17 +264,17 @@ function ManageUser() {
         <div className="bg-white p-2 rounded-md">
           <div className=" min-h-[20vh] w-full mt-2 rounded-l p-2">
             <div className="container mx-auto p-4 bg-white">
-              <div className="flex justify-between mb-4">
+              <div className="flex items-center flex-col lg:flex-row gap-3 justify-between mb-4">
                 <input
                   type="text"
                   placeholder="Search..."
-                  className="rounded-md border border-gray-300 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="rounded-md border w-full md:w-1/2 border-gray-300 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
 
-                <div className="flex space-x-4">
+                <div className="flex flex-col gap-4 md:flex-row space-x-4">
                   <button
                     onClick={() => setopenTheSearch(!openTheSearch)}
-                    className="border border-gray-300  text-gray  py-1 px-5 rounded-md flex items-center gap-4 flex-row-reverse"
+                    className="border border-gray-300  text-gray text-[1rem] py-1 px-5 rounded-md flex items-center gap-4 flex-row-reverse"
                   >
                     Filter
                     <IoFilterOutline />
@@ -284,6 +284,7 @@ function ManageUser() {
                     <RiDownloadLine />
                   </button>
                 </div>
+
               </div>
               <form
                 className={

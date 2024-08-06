@@ -67,10 +67,10 @@ function Table() {
   };
 
   return (
-    <div className="container mx-auto bg-white p-2 rounded">
+    <div className="container mx-auto overflow-scroll bg-white p-2 rounded">
       <table className="w-full border-collapse rounded">
         <thead>
-          <tr>
+          <tr className="bg-gray-50">
             <th className="px-4 py-2 border-b">ID</th>
             <th className="px-4 py-2 border-b">Full Name</th>
             <th className="px-4 py-2 border-b">Franchise Name</th>
