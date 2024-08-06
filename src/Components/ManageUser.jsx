@@ -228,7 +228,7 @@ function ManageUser() {
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
         <ul className="flex flex-col lg:flex-row border-b gap-8">
-          <li className=" pb-3 text-center border-b-2 border-blue-500 font-bold">
+          <li className=" pb-3 text-center text-blue-500 border-b-2 border-blue-500 font-bold">
             Franchisor
           </li>
           <Link to="/franchise">
