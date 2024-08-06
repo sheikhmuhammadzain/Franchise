@@ -55,7 +55,14 @@ const TechnicalRequests = () => {
 
   return (
     <div className="p-6 bg-[#FAFBFA] w-full">
-      <h1 className="text-2xl font-bold mb-6">Technical Requests</h1>
+      <div className="flex item-center justify-between">
+        <h1 className="text-2xl font-bold mb-6">Technical Requests</h1>
+        <select className="p-1 my-2 border rounded">
+          <option>Yearly</option>
+          <option>Monthly</option>
+          <option>Daily</option>
+        </select>
+      </div>
 
       <div className="grid grid-cols-3 gap-4 mb-6">
         <div className="bg-white px-4 pb-9 pt-4 rounded shadow">

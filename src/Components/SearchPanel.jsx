@@ -213,7 +213,7 @@ const SearchPanel = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="rounded-md border w-full md:w-1/2 border-gray-300 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="rounded-md border w-full md:w-1/4 border-gray-300 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <div className="flex flex-col gap-4 md:flex-row space-x-4">

@@ -262,13 +262,13 @@ function ManageUser() {
           </div>
         </div>
         <div className="bg-white p-2 rounded-md">
-          <div className=" min-h-[20vh] w-full mt-2 rounded-l p-2">
-            <div className="container mx-auto p-4 bg-white">
+          <div className="  w-full mt-2 rounded-l ">
+            <div className="container mx-auto py-1  bg-white">
               <div className="flex items-center flex-col lg:flex-row gap-3 justify-between mb-4">
                 <input
                   type="text"
                   placeholder="Search..."
-                  className="rounded-md border w-full md:w-1/2 border-gray-300 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="rounded-md border w-full md:w-1/4 border-gray-300 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
 
                 <div className="flex flex-col gap-4 md:flex-row space-x-4">
