@@ -233,6 +233,32 @@ function ManageUser() {
 
         {/* seacrhdiv */}
 
+        <div className="grid grid-cols-3 gap-4 my-3">
+          <div className="bg-white border shadow p-4 rounded-lg">
+            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
+              Total Franchisor
+            </Typography>
+            <Typography variant="h4" className="font-bold">
+              {rows.length}
+            </Typography>
+          </div>
+          <div className="bg-white border shadow p-4 rounded-lg">
+            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
+              Pro Plan
+            </Typography>
+            <Typography variant="h4" className="font-bold">
+              {rows.filter((row) => row.plan === "Pro").length}
+            </Typography>
+          </div>
+          <div className="bg-white border shadow p-4 rounded-lg">
+            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
+              Basic Plan
+            </Typography>
+            <Typography variant="h4" className="font-bold">
+              {rows.filter((row) => row.plan === "Basic").length}
+            </Typography>
+          </div>
+        </div>
         <div className=" min-h-[20vh] w-full mt-2 rounded-l p-2">
           <div className="container mx-auto p-4 bg-white">
             <div className="flex justify-between mb-4">
@@ -377,33 +403,6 @@ function ManageUser() {
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-4 my-3">
-          <div className="bg-white border shadow p-4 rounded-lg">
-            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
-              Total Franchisor
-            </Typography>
-            <Typography variant="h4" className="font-bold">
-              {rows.length}
-            </Typography>
-          </div>
-          <div className="bg-white border shadow p-4 rounded-lg">
-            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
-              Pro Plan
-            </Typography>
-            <Typography variant="h4" className="font-bold">
-              {rows.filter((row) => row.plan === "Pro").length}
-            </Typography>
-          </div>
-          <div className="bg-white border shadow p-4 rounded-lg">
-            <Typography variant="h6" className="font-bold mb-2 text-gray-500">
-              Basic Plan
-            </Typography>
-            <Typography variant="h4" className="font-bold">
-              {rows.filter((row) => row.plan === "Basic").length}
-            </Typography>
           </div>
         </div>
 
