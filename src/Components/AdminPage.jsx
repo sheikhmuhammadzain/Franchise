@@ -21,6 +21,7 @@ const AdminPage = () => {
         <div className="h-screen max-w-[100%] bg-[#FAFBFA]">
           <Dashboard />
         </div>
+        
       </div>
     </div>
   );

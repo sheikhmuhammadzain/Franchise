@@ -9,7 +9,7 @@ const TechnicalPage = () => {
     setActiveButton(buttonId);
   };
   return (
-    <div className="flex">
+    <div className="flex bg-[#FAFBFA] min-h-[200vh]">
       <div>
         <Sidebar
           activeButton={activeButton}

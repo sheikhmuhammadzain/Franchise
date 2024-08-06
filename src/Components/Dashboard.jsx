@@ -1,4 +1,4 @@
-  import { Doughnut, Bar } from "react-chartjs-2";
+import { Doughnut, Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import Tables from "./Tables";
 
 ChartJS.register(
   ArcElement,
@@ -114,53 +115,20 @@ const FinancialOverview = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="bg-white p-4 rounded shadow">
+        <div className="bg-white h-[60vh]   p-4 rounded shadow">
           <h2 className="text-lg font-semibold mb-4">Top Franchise</h2>
-          <Doughnut data={doughnutData} />
+          <div className="h-[370px] w-[240px]">
+            <Doughnut data={doughnutData} />
+          </div>
         </div>
         <div className="bg-white p-4 rounded shadow">
           <h2 className="text-lg font-semibold mb-4">Top Sales Location</h2>
           <Bar data={barData} />
         </div>
+
       </div>
 
-      <div className="bg-white p-4 rounded shadow">
-        <div className="flex justify-between items-center mb-4">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="p-2 border rounded"
-          />
-          <div>
-            <button className="mr-2 p-2 border rounded">Filter</button>
-            <button className="p-2 border rounded">Export</button>
-          </div>
-        </div>
-        <table className="w-full">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="p-2 text-left">ID</th>
-              <th className="p-2 text-left">Franchise Name</th>
-              <th className="p-2 text-left">Franchisor Name</th>
-              <th className="p-2 text-left">City</th>
-              <th className="p-2 text-left">Sales</th>
-              <th className="p-2 text-left">Royalty</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((row, index) => (
-              <tr key={index} className="border-b">
-                <td className="p-2">{row.id}</td>
-                <td className="p-2">{row.franchiseName}</td>
-                <td className="p-2">{row.franchisorName}</td>
-                <td className="p-2">{row.city}</td>
-                <td className="p-2">${row.sales}</td>
-                <td className="p-2">${row.royalty}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <Tables/>
     </div>
   );
 };
