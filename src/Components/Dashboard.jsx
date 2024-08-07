@@ -135,7 +135,7 @@ const FinancialOverview = () => {
 
 
 
-        <div className="bg-white pb-12 px-2 pt-3 rounded shadow h-[360px] max-w-full  overflow-hidden">
+        <div className="bg-white pb-12 px-2 pt-3 rounded shadow h-[360]px max-w-full  overflow-hidden">
           <h2 className="text-lg font-semibold mb-4">Top Sales Location</h2>
           <Bar data={barData} />
         </div>
