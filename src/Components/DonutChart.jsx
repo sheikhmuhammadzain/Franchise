@@ -14,7 +14,7 @@ const DonutChart = () => {
     <div className="w-full max-w-md mx-auto">
       <h2 className="text-xl font-bold mb-4">Top Franchise</h2>
       <div className="relative">
-        <PieChart width={400} height={400}>
+        <PieChart width={400} height={390}>
           <Pie
             data={data}
             cx={200}

@@ -120,7 +120,7 @@ const FinancialOverview = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-3 mb-6 "  >
 
-        <div className="bg-white p-4 rounded shadow  mb-2">
+        <div className="bg-white p-4 rounded shadow">
           <DonutChart />
         </div>
 
