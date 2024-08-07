@@ -33,7 +33,7 @@ function TechnicalTable() {
   return (
     <div className="mx-auto overflow-scroll bg-white p-2 rounded">
      
-      <table className="w-full border-collapse rounded">
+      <table className="w-full border-collapse rounded whitespace-nowrap">
         <thead>
           <tr className="bg-gray-200">
             <th className="px-4 py-2 border">Request ID</th>
