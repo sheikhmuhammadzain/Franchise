@@ -54,7 +54,7 @@ const TechnicalRequests = () => {
 
 
   return (
-    <div className="p-6 bg-[#FAFBFA] w-full">
+    <div className="p-8 bg-[#FAFBFA] w-full">
       <div className="flex item-center justify-between">
         <h1 className="text-2xl font-bold mb-6">Technical Requests</h1>
         <select className="p-1 my-2 border rounded">
