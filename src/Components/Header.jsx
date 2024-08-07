@@ -38,8 +38,7 @@ const Header = () => {
                 </div>
                 <Menu.Item>
                   {({ active }) => (
-                    <a
-                      href="/login"
+                    <Link to="/login"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } flex items-center p-2 space-x-2 text-gray-700`}
@@ -47,13 +46,12 @@ const Header = () => {
                       <FiUser className="w-5 h-5" />
                       <Link to="/login"><span>Profile</span></Link>
                       
-                    </a>
+                    </Link>
                   )}
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
-                    <a
-                      href="/login"
+                    <Link to="/login"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } flex items-center p-2 space-x-2 text-red-600`}
@@ -61,7 +59,7 @@ const Header = () => {
                      <IoLogOutOutline />
 
                       <span>Sign Out</span>
-                    </a>
+                    </Link>
                   )}
                 </Menu.Item>
               </Menu.Items>
