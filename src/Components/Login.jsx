@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { RiCloseLargeFill } from "react-icons/ri";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,31 +20,34 @@ function Login() {
             : "hidden"
         }
       >
-        <div className="bg-white min-w-[50vw] rounded-lg">
-          <div className="flex justify-between items-center gap-20 bg-gray-50 px-10 py-6 rounded-lg">
-            <h1 className="font-bold text-2xl">Forgot Password</h1>
+        <div className="bg-white min-w-[40vw] rounded-lg">
+          <div className="flex items-center justify-between gap-10 px-8 py-3 rounded bg-gray-50">
+            <h1 className="text-lg font-bold">Forgot Password</h1>
             <p
               className="font-bold cusor-pointer"
               onClick={() => setforgot(true)}
+
             >
-              X
+              <RiCloseLargeFill />
+
             </p>
           </div>
-          <div className="p-10 ">
-            <h1 className="mb-3">Confirm Email Adress</h1>
+          <div className="px-5 py-2">
+            <h1 className="mb-3 font-semibold">Confirm Email Adress</h1>
             <input
               type="email"
-              placeholder="Enter the email "
-              className=" border px-2 block w-full py-4 rounded-lg"
+              placeholder="Enter Email Address "
+              
+              className="block w-full px-4 py-2 border rounded-lg "
             />
-            <div className="flex justify-end py-6 gap-8">
+            <div className="flex justify-end gap-4 py-6">
               <button
-                className="font-bold border px-3 rounded-lg text-gray-600 "
+                className="px-5 text-gray-400 border rounded-lg "
                 onClick={() => setforgot(true)}
               >
                 Cancel
               </button>
-              <button className="btn btn-primary">Send Reset Link</button>
+              <button className="px-10 py-2 bg-[#326DCF] text-white rounded">Send Reset Link</button>
             </div>
           </div>
         </div>
@@ -58,13 +62,11 @@ function Login() {
         />
       </header>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md relative">
-          <h2 className="text-3xl font-bold mb-4 text-center ">
+        <div className="relative w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+          <h2 className="mb-4 text-3xl font-bold text-center ">
             LOG IN{" "}
             <Link to="/">
-              <span className="ml-9 font-thin text-sm absolute top-[1rem] right-[1.4rem] cursor-pointer">
-                X
-              </span>
+             
             </Link>
           </h2>
 
@@ -72,7 +74,7 @@ function Login() {
             <div className="mb-4">
               <label
                 htmlFor="email"
-                className="block text-gray-700 font-bold mb-2"
+                className="block mb-2 font-bold text-gray-700"
               >
                 Email
               </label>
@@ -82,15 +84,15 @@ function Login() {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="border rounded-md p-2 w-full"
-                placeholder="Enter your email"
+                className="w-full p-2 border rounded-md"
+                placeholder="Enter Email"
                 required
               />
             </div>
             <div className="mb-4">
               <label
                 htmlFor="password"
-                className="block text-gray-700 font-bold mb-2"
+                className="block mb-2 font-bold text-gray-700"
               >
                 Password
               </label>
@@ -100,20 +102,20 @@ function Login() {
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="border rounded-md p-2 w-full"
-                placeholder="Enter your password"
+                className="w-full p-2 border rounded-md"
+                placeholder="Enter Password"
                 required
               />
             </div>
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  w-full rounded-md"
+              className="w-full px-4 py-2 text-white bg-[#326DCF] shadow-lg rounded-md hover:bg-blue-700"
             >
-              Sign In
+              SIGN IN
             </button>
           </form>
           <div
-            className="text-center mt-4 underline cursor-pointer"
+            className="mt-4 text-center underline cursor-pointer"
             onClick={() => setforgot(false)}
           >
             Forgot password?

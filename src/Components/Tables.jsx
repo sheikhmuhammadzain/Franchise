@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { BsThreeDotsVertical } from "react-icons/bs";
+
 
 function Table() {
   const [tableData, setTableData] = useState([
@@ -105,20 +107,8 @@ function Table() {
                   onClick={() => handleDropdownOpen(row.id)}
                   className="text-gray-500 hover:text-gray-700"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 5v.01M12 12v.01M12 19v.01M9 5h12m0 0l-3 3m3-3l-3 3m3-3l-3 3m3-3l-3 3m3-3l-3 3"
-                    />
-                  </svg>
+                  <BsThreeDotsVertical />
+
                 </button>
 
                 {openDropdown === row.id && (
@@ -132,7 +122,7 @@ function Table() {
                       </li>
                       <li
                         className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={()=>setReset(true)} 
+                        onClick={() => setReset(true)}
                       >
                         Reset password
                       </li>
@@ -289,56 +279,65 @@ function Table() {
         </div>
 
         {/* resetpop */}
-        
+      </div>
+
+      <div
+        className={`fixed inset-0 bg-[#1a1a1a3d] z-50 flex  justify-center items-center ${
+          Reset ? "block" : "hidden"
+        }`}
+      >
+        <div className="bg-white rounded-lg min-w-[500px] p-6">
+          <button
+            className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+            onClick={() => setReset(false)}
+          >
+            {" "}
+            X
+          </button>
+
+          {/* resetpasswordsection */}
+
+          <h2 className="text-lg font-semibold mb-4">Reset Password</h2>
+
+          <div className="mb-4">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Create Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500   
+ focus:ring-indigo-500 sm:text-sm"
+            />
+          </div>
+
+          <div
+            className="flex   
+ justify-end"
+          >
+            <button
+              onClick={() => setReset(false)}
+              className="border hover:bg-gray-300 text-gray-400 font-bold py-2 px-4 rounded mr-4"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={() => setReset(false)}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
       </div>
 
 
 
-      <div
-          className={`fixed inset-0 bg-[#1a1a1a3d] z-50 flex  justify-center items-center ${
-            Reset ? "block" : "hidden"
-          }`}
-        >
-          <div className="bg-white rounded-lg min-w-[500px] p-6">
-            <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-              onClick={() => setReset(false)}
-            > X
-            </button>  
-
-            {/* resetpasswordsection */}
-
-            <h2 className="text-lg font-semibold mb-4">Reset Password</h2>
-
-            <div className="mb-4">
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Create Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500   
- focus:ring-indigo-500 sm:text-sm"
-              />
-            </div>
-
-            <div
-              className="flex   
- justify-end"
-            >
-              <button onClick={()=>setReset(false)} className="border hover:bg-gray-300 text-gray-400 font-bold py-2 px-4 rounded mr-4">
-                Cancel  
-              </button>
-              <button onClick={() => setReset(false)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Reset
-              </button>
-            </div>
-          </div>
-        </div>
+      
     </div>
   );
 }

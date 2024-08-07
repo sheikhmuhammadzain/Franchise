@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.blue-btn {
+  @apply px-10 py-2 bg-[#326DCF] text-white rounded-md;
+}
+.gray-btn {
+  @apply px-5 text-gray-400 border rounded-lg;
+}
 .MuiDataGrid-root {
   border: 1px solid #e0e0e0;
 }

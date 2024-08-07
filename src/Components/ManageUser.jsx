@@ -2,6 +2,8 @@ import { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { IoFilterOutline } from "react-icons/io5";
 import { RiDownloadLine } from "react-icons/ri";
+import { IoMdAdd } from "react-icons/io";
+
 import Tables from './Tables'
 // ... (other imports remain the same)
 import {
@@ -165,7 +167,7 @@ function ManageUser() {
       headerName: "Actions",
       width: 100,
       renderCell: (params) => (
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <FontAwesomeIcon icon={faCheckCircle} className="text-green-500" />
           <FontAwesomeIcon icon={faTimesCircle} className="text-red-500" />
         </div>
@@ -217,61 +219,61 @@ function ManageUser() {
   return (
     <div className="bg-gray-50 p-4 rounded-lg  min-h-screen w-[calc(100%-200px)] mt-[80px] px-8 ml-auto flex-1">
       <div
-        className="flex flex-col lg:flex-row gap-3 justify-between items-center  my-2
-    "
+        className="flex flex-col items-center justify-between gap-3 my-2 lg:flex-row "
       >
-        <h2 className="text-2xl font-bold ml-2 ">Manage User</h2>
-        <Button variant="contained" color="primary" onClick={handleOpenDialog}>
-          + Add Franchisor
-        </Button>
+        <h2 className="ml-2 text-2xl font-bold ">Manage User</h2>
+        <button  className="blue-btn flex max-w-fit font-normal" onClick={handleOpenDialog}>
+           <span className='mr-2 text-2xl font-thin'><IoMdAdd />
+           </span>  Add Franchisor
+        </button>
       </div>
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
-        <ul className="flex flex-col lg:flex-row border-b gap-8">
-          <li className=" pb-3 text-center text-blue-500 border-b-2 border-blue-500 font-bold">
+        <ul className="flex flex-col gap-8 border-b lg:flex-row">
+          <li className="pb-3 font-bold text-center text-blue-500 border-b-2 border-blue-500 ">
             Franchisor
           </li>
           <Link to="/franchise">
             {" "}
-            <li className=" text-center">Franchisee</li>
+            <li className="text-center ">Franchisee</li>
           </Link>
 
           <Link to="sales">
-            <li className=" text-center">Sales</li>
+            <li className="text-center ">Sales</li>
           </Link>
         </ul>
 
         {/* seacrhdiv */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-4 gap-4 mb-6">
-          <div className="bg-white px-4 pb-9 pt-4 rounded shadow">
-            <h2 className="text-sm text-gray-500 pb-2">Total Franchise</h2>
+        <div className="grid grid-cols-1 gap-4 mt-4 mb-6 lg:grid-cols-3">
+          <div className="px-4 pt-4 bg-white rounded shadow pb-9">
+            <h2 className="pb-2 text-sm font-medium text-gray-500">Total Franchisor</h2>
             <p className="text-2xl font-bold"> {rows.length}</p>
           </div>
-          <div className="bg-white px-4 pb-9 pt-4  rounded shadow">
-            <h2 className="text-sm text-gray-500">Total Sales</h2>
+          <div className="px-4 pt-4 bg-white rounded shadow pb-9">
+            <h2 className="text-sm font-medium text-gray-500 " >Pro Plan </h2>
             <p className="text-2xl font-bold">
               {rows.filter((row) => row.plan === "Pro").length}
             </p>
           </div>
-          <div className="bg-white px-4 pb-9 pt-4  rounded shadow">
-            <h2 className="text-sm text-gray-500">Total Royalty</h2>
+          <div className="px-4 pt-4 bg-white rounded shadow pb-9">
+            <h2 className="text-sm font-medium text-gray-500">Base Plan</h2>
             <p className="text-2xl font-bold">
               {rows.filter((row) => row.plan === "Basic").length}
             </p>
           </div>
         </div>
-        <div className="bg-white p-2 rounded-md">
-          <div className="  w-full mt-2 rounded-l ">
-            <div className="container mx-auto py-1  bg-white">
-              <div className="flex items-center flex-col lg:flex-row gap-3 justify-between mb-4">
+        <div className="p-2 bg-white rounded-md">
+          <div className="w-full mt-2 rounded-l ">
+            <div className="container  mx-auto bg-white">
+              <div className="flex flex-col items-center justify-between gap-3 mb-4 lg:flex-row">
                 <input
                   type="text"
                   placeholder="Search..."
-                  className="rounded-md border w-full md:w-1/4 border-gray-300 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md md:w-1/4 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
 
-                <div className="flex flex-col gap-4 md:flex-row space-x-4">
+                <div className="flex flex-col gap-4 space-x-4 md:flex-row">
                   <button
                     onClick={() => setopenTheSearch(!openTheSearch)}
                     className="border border-gray-300  text-gray text-[1rem] py-1 px-5 rounded-md flex items-center gap-4 flex-row-reverse"
@@ -279,7 +281,7 @@ function ManageUser() {
                     Filter
                     <IoFilterOutline />
                   </button>
-                  <button className="btn btn-outline border-gray-300  flex items-center gap-4 flex-row-reverse">
+                  <button className="flex flex-row-reverse items-center gap-4 border-gray-300 btn btn-outline">
                     Export
                     <RiDownloadLine />
                   </button>
@@ -296,7 +298,7 @@ function ManageUser() {
                   <div className="">
                     <label
                       htmlFor="id"
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block mb-2 text-sm font-bold text-gray-700"
                     >
                       ID
                     </label>
@@ -305,13 +307,13 @@ function ManageUser() {
                       id="id"
                       value={id}
                       onChange={(e) => setId(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="fullName"
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block mb-2 text-sm font-bold text-gray-700"
                     >
                       Full Name
                     </label>
@@ -320,13 +322,13 @@ function ManageUser() {
                       id="fullName"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="franchiseName"
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block mb-2 text-sm font-bold text-gray-700"
                     >
                       Franchise Name
                     </label>
@@ -335,13 +337,13 @@ function ManageUser() {
                       id="franchiseName"
                       value={franchiseName}
                       onChange={(e) => setFranchiseName(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block mb-2 text-sm font-bold text-gray-700"
                     >
                       Email Address
                     </label>
@@ -350,7 +352,7 @@ function ManageUser() {
                       id="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     />
                   </div>
                 </div>
@@ -358,7 +360,7 @@ function ManageUser() {
                   <div>
                     <label
                       htmlFor="plan"
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block mb-2 text-sm font-bold text-gray-700"
                     >
                       Plan
                     </label>
@@ -366,7 +368,7 @@ function ManageUser() {
                       id="plan"
                       value={plan}
                       onChange={(e) => setPlan(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     >
                       <option value="All">All</option>
                       <option value="Plan A">Plan A</option>
@@ -376,7 +378,7 @@ function ManageUser() {
                   <div>
                     <label
                       htmlFor="status"
-                      className="block text-gray-700 text-sm font-bold mb-2"
+                      className="block mb-2 text-sm font-bold text-gray-700"
                     >
                       Status
                     </label>
@@ -384,7 +386,7 @@ function ManageUser() {
                       id="status"
                       value={status}
                       onChange={(e) => setStatus(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     >
                       <option value="All">All</option>
                       <option value="Active">Active</option>
@@ -395,7 +397,7 @@ function ManageUser() {
                 <div className="flex justify-end mt-6">
                   <button
                     type="button"
-                    className="  text-blue-300  py-2 px-4 rounded-md mr-4"
+                    className="px-4 py-2 mr-4 text-blue-300 rounded-md "
                   >
                     Clear all
                   </button>
@@ -416,7 +418,7 @@ function ManageUser() {
 
       {openDialog && (
         <div className="fixed z-[32] inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+          <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold">Add Franchisor</h2>
               <button
@@ -432,7 +434,7 @@ function ManageUser() {
                 <div>
                   <label
                     htmlFor="firstName"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block mb-1 text-sm font-medium text-gray-700"
                   >
                     First Name
                   </label>
@@ -448,7 +450,7 @@ function ManageUser() {
                 <div>
                   <label
                     htmlFor="lastName"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block mb-1 text-sm font-medium text-gray-700"
                   >
                     Last Name
                   </label>
@@ -465,7 +467,7 @@ function ManageUser() {
               <div className="mb-4">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block mb-1 text-sm font-medium text-gray-700"
                 >
                   Email
                 </label>
@@ -481,7 +483,7 @@ function ManageUser() {
               <div className="mb-6">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block mb-1 text-sm font-medium text-gray-700"
                 >
                   Create Password
                 </label>
@@ -498,13 +500,13 @@ function ManageUser() {
                 <button
                   onClick={handleCloseDialog}
                   type="button"
-                  className="bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-md hover:bg-gray-200 mr-2"
+                  className="px-4 py-2 mr-2 font-medium text-gray-800 bg-gray-100 rounded-md hover:bg-gray-200"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700"
+                  className="px-4 py-2 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
                 >
                   Add
                 </button>

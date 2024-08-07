@@ -2,6 +2,8 @@ import { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { IoFilterOutline } from "react-icons/io5";
 import { RiDownloadLine } from "react-icons/ri";
+import { IoMdAdd } from "react-icons/io";
+
 import Tables from "./Tables";
 // ... (other imports remain the same)
 import {
@@ -33,6 +35,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../index.css";
+import SearchPanel from "./SearchPanel";
 
 function Franchisee() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -221,9 +224,10 @@ function Franchisee() {
     "
       >
         <h2 className="text-2xl font-bold ml-2 ">Manage User</h2>
-        <Button variant="contained" color="primary" onClick={handleOpenDialog}>
-          + Add Franchisor
-        </Button>
+        <button  className="blue-btn flex max-w-fit font-normal" onClick={handleOpenDialog}>
+           <span className='mr-2 text-2xl font-thin'><IoMdAdd />
+           </span>  Add Franchisor
+        </button>
       </div>
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
@@ -265,151 +269,8 @@ function Franchisee() {
           </div>
         </div>
         <div className="bg-white p-2 rounded-md">
-          <div className=" min-h-[20vh] w-full mt-2 rounded-l p-2">
-            <div className="container mx-auto p-4 bg-white">
-              <div className="flex items-center flex-col lg:flex-row gap-3 justify-between mb-4">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="rounded-md border w-full md:w-1/4 border-gray-300 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-
-                <div className="flex flex-col gap-4 md:flex-row space-x-4">
-                  <button
-                    onClick={() => setopenTheSearch(!openTheSearch)}
-                    className="border border-gray-300  text-gray text-[1rem] py-1 px-5 rounded-md flex items-center gap-4 flex-row-reverse"
-                  >
-                    Filter
-                    <IoFilterOutline />
-                  </button>
-                  <button className="btn btn-outline border-gray-300  flex items-center gap-4 flex-row-reverse">
-                    Export
-                    <RiDownloadLine />
-                  </button>
-                </div>
-              </div>
-              <form
-                className={
-                  openTheSearch ? "bg-[#F4F7FC] p-4 rounded-lg" : "hidden"
-                }
-                onSubmit={handleSubmit}
-              >
-                <div className="grid grid-cols-4 gap-4 ">
-                  <div className="">
-                    <label
-                      htmlFor="id"
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                    >
-                      ID
-                    </label>
-                    <input
-                      type="text"
-                      id="id"
-                      value={id}
-                      onChange={(e) => setId(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="fullName"
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                    >
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      id="fullName"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="franchiseName"
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                    >
-                      Franchise Name
-                    </label>
-                    <input
-                      type="text"
-                      id="franchiseName"
-                      value={franchiseName}
-                      onChange={(e) => setFranchiseName(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                    >
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4 mt-4">
-                  <div>
-                    <label
-                      htmlFor="plan"
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                    >
-                      Plan
-                    </label>
-                    <select
-                      id="plan"
-                      value={plan}
-                      onChange={(e) => setPlan(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    >
-                      <option value="All">All</option>
-                      <option value="Plan A">Plan A</option>
-                      <option value="Plan B">Plan B</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="status"
-                      className="block text-gray-700 text-sm font-bold mb-2"
-                    >
-                      Status
-                    </label>
-                    <select
-                      id="status"
-                      value={status}
-                      onChange={(e) => setStatus(e.target.value)}
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    >
-                      <option value="All">All</option>
-                      <option value="Active">Active</option>
-                      <option value="Inactive">Inactive</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="flex justify-end mt-6">
-                  <button
-                    type="button"
-                    className="  text-blue-300  py-2 px-4 rounded-md mr-4"
-                  >
-                    Clear all
-                  </button>
-                  <button
-                    type="submit"
-                    className="bg-[#326DCF] hover:bg-blue-700 text-white  py-2 px-4 rounded-md"
-                  >
-                    Show Results
-                  </button>
-                </div>
-              </form>
-            </div>
+          <div className="  w-full mt-2 rounded-l">
+           <SearchPanel/>
           </div>
         </div>
         <Tables />
