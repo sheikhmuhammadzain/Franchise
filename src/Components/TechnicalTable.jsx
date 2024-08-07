@@ -38,7 +38,7 @@ function TechnicalTable() {
      
       <table className="w-full border-collapse rounded whitespace-nowrap">
         <thead>
-          <tr className="bg-gray-200">
+          <tr className="bg-gray-200 bg-opacity-50">
             <th className="px-4 py-2 border">Request ID</th>
             <th className="px-4 py-2 border">User ID</th>
             <th className="px-4 py-2 border">Full Name</th>
@@ -53,7 +53,7 @@ function TechnicalTable() {
           {filteredData.map((row, index) => (
             <tr
               key={row.requestId}
-              className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}
+              className={index % 2 === 0 ? "bg-blue-100 bg-opacity-10" : "bg-white"}
             >
               <td className="px-4 py-2 border">{row.requestId}</td>
               <td className="px-4 py-2 border">{row.userId}</td>
