@@ -719,7 +719,7 @@ function ManageUser() {
               {/* Table */}
               <div className=""><table className="w-full border-collapse rounded whitespace-nowrap ">
                 <thead>
-                  <tr className="bg-gray-50">
+                  <tr className="bg-gray-50 text-left">
                     <th className="px-4 py-2 border-b">ID</th>
                     <th className="px-4 py-2 border-b">Full Name</th>
                     <th className="px-4 py-2 border-b">Franchise Name</th>
