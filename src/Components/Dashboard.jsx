@@ -1,4 +1,5 @@
 import { Doughnut, Bar } from "react-chartjs-2";
+import DonutChart from './DonutChart';
 import {
   Chart as ChartJS,
   ArcElement,
@@ -121,27 +122,15 @@ const FinancialOverview = () => {
 
 
         <div className="bg-white p-4 rounded shadow  mb-2">
-          <h2 className="text-lg font-semibold ">Top Franchise</h2>
-          <div className="flex justify-center items-center">
-          <div className="min-h-[240px] ml-7 mb-2 max-w-[200px] flex justify-center">
-            <Doughnut data={doughnutData} />
-          </div>
+          
+          <h1 className="text-lg font-semibold">Top Franchise
+          </h1>
+          <div className="grid place-items-center h-full">
+      <DonutChart />
+          
           </div>
          
-          <div className="flex items-center justify-between mt-3">
-            <div>
-              <h1 className="text-green-400 font-bold" > $60000</h1>
-              <h1>KFC</h1>
-            </div>
-            <div>
-              <h1 className="text-blue-800 font-bold">$60000</h1>
-              <h1>Lorem...</h1>
-            </div>
-            <div>
-              <h1 className="text-blue-300 font-bold">$60000</h1>
-              <h1>Lore...</h1>
-            </div>
-          </div>
+          
         </div>
 
 
