@@ -32,18 +32,7 @@ function TechnicalTable() {
 
   return (
     <div className="mx-auto overflow-scroll bg-white p-2 rounded">
-      <div className="flex justify-between items-center mb-4">
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className="px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <button className="btn btn-outline">
-          Filter
-        </button>
-      </div>
+     
       <table className="w-full border-collapse rounded">
         <thead>
           <tr className="bg-gray-200">
