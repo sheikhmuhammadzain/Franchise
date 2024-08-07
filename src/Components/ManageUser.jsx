@@ -221,7 +221,7 @@ function ManageUser() {
       <div
         className="flex flex-col items-center justify-between gap-3 my-2 lg:flex-row "
       >
-        <h2 className="ml-2 text-2xl font-bold ">Manage User</h2>
+        <h2 className="ml-2 text-2xl font-bold "  >Manage User</h2>
         <button  className="blue-btn flex max-w-fit font-normal" onClick={handleOpenDialog}>
            <span className='mr-2 text-2xl font-thin'><IoMdAdd />
            </span>  Add Franchisor
@@ -230,7 +230,7 @@ function ManageUser() {
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
         <ul className="flex flex-col gap-8 border-b lg:flex-row">
-          <li className="pb-3 font-bold text-center text-blue-500 border-b-2 border-blue-500 ">
+          <li className="pb-3 font-bold text-center text-blue-500 border-b border-blue-500 ">
             Franchisor
           </li>
           <Link to="/franchise">
@@ -288,6 +288,7 @@ function ManageUser() {
                 </div>
 
               </div>
+              {/* search-from */}
               <form
                 className={
                   openTheSearch ? "bg-[#F4F7FC] p-4 rounded-lg" : "hidden"

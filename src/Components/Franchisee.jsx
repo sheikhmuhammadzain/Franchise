@@ -233,9 +233,9 @@ function Franchisee() {
       </div>
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
-        <ul className="flex flex-col lg:flex-row gap-8">
+        <ul className="flex flex-col border-b lg:flex-row gap-8">
           <Link to="/">
-            <li className="  text-center border-b-2 ">Franchisor</li>
+            <li className="  text-center ">Franchisor</li>
           </Link>
 
           <Link to="/franchise">
