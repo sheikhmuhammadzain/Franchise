@@ -2,7 +2,7 @@ import { FaRegBell } from 'react-icons/fa';
 
 const Notification = () => {
   return (
-    <div className="flex items-center justify-end p-4 gap-3">
+    <div className="flex items-center justify-end  gap-3">
       <div className="dropdown dropdown-bottom dropdown-end">
         <div
           tabIndex={0}
