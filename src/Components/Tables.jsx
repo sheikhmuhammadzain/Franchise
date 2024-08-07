@@ -2,6 +2,9 @@ import  { useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 import { IoAddSharp } from "react-icons/io5";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+
 
 
 function Table() { const [tableData, setTableData] = useState([
@@ -274,6 +277,11 @@ const handleOptionClick = (id, option) => {
           </div>
         </div>
       )}
+      <div className="flex justify-end p-5 bg-gray-50">
+      <Stack spacing={7}>
+      <Pagination count={30} shape="rounded" color="primary" />
+    </Stack>
+      </div>
 
       {/* ... (other dialogs remain the same) ... */}
     </div>
