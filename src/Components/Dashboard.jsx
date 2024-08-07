@@ -122,7 +122,7 @@ const FinancialOverview = () => {
 
         <div className="bg-white p-4 rounded shadow  mb-2">
           <h2 className="text-lg font-semibold ">Top Franchise</h2>
-          <div className="min-h-[240px] ml-7 mb-2 max-w-[200px]">
+          <div className="min-h-[240px] ml-7 mb-2 max-w-[200px] grid items-center">
             <Doughnut data={doughnutData} />
           </div>
           <div className="flex items-center justify-between mt-3">
