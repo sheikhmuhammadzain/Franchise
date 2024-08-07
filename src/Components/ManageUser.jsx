@@ -717,7 +717,7 @@ function ManageUser() {
               )}
 
               {/* Table */}
-              <table className="w-full border-collapse rounded">
+              <div className="overflow-x-auto"><table className="w-full border-collapse rounded whitespace-nowrap ">
                 <thead>
                   <tr className="bg-gray-50">
                     <th className="px-4 py-2 border-b">ID</th>
@@ -786,7 +786,8 @@ function ManageUser() {
                     </tr>
                   ))}
                 </tbody>
-              </table>
+              </table></div>
+              
             </div>
           </div>
         </div>
