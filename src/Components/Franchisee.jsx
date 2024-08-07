@@ -226,10 +226,7 @@ function Franchisee() {
     "
       >
         <h2 className="text-2xl font-bold ml-2 ">Manage User</h2>
-        <button  className="blue-btn flex max-w-fit font-normal" onClick={handleOpenDialog}>
-           <span className='mr-2 text-2xl font-thin'><IoMdAdd />
-           </span>  Add Franchisor
-        </button>
+        
       </div>
 
       <div className="bg-[#FAFBFA] p-4 rounded-lg">
@@ -255,18 +252,18 @@ function Franchisee() {
         <div className="grid grid-cols-1 lg:grid-cols-3 mt-4 gap-4 mb-6">
           <div className="bg-white px-4 pb-9 pt-4 rounded shadow">
             <h2 className="text-sm text-gray-500 pb-2">Total Franchisee</h2>
-            <p className="text-2xl font-bold"> {rows.length}</p>
+            <p className="text-2xl font-bold"> 20</p>
           </div>
           <div className="bg-white px-4 pb-9 pt-4  rounded shadow">
             <h2 className="text-sm text-gray-500">Active Franchisee</h2>
             <p className="text-2xl font-bold">
-              {rows.filter((row) => row.plan === "Pro").length}
+              19
             </p>
           </div>
           <div className="bg-white px-4 pb-9 pt-4  rounded shadow">
             <h2 className="text-sm text-gray-500">Inactive Franchisee</h2>
             <p className="text-2xl font-bold">
-              {rows.filter((row) => row.plan === "Basic").length}
+             1
             </p>
           </div>
         </div>
