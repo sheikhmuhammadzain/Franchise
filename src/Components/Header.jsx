@@ -61,7 +61,7 @@ const Header = () => {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="/profile"
+                      href="/login"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } flex items-center p-2 space-x-2 text-gray-700`}
@@ -75,7 +75,7 @@ const Header = () => {
                 <Menu.Item>
                   {({ active }) => (
                     <a
-                      href="/signout"
+                      href="/login"
                       className={`${
                         active ? 'bg-gray-100' : ''
                       } flex items-center p-2 space-x-2 text-red-600`}
