@@ -38,7 +38,7 @@ function TechnicalTable() {
      
       <table className="w-full border-collapse rounded whitespace-nowrap">
         <thead>
-          <tr className="bg-gray-200 bg-opacity-50">
+          <tr className="bg-gray-200 bg-opacity-50 text-left">
             <th className="px-4 py-2 border">Request ID</th>
             <th className="px-4 py-2 border">User ID</th>
             <th className="px-4 py-2 border">Full Name</th>
