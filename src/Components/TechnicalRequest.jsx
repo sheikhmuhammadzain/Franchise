@@ -93,7 +93,6 @@ const TechnicalRequests = () => {
 
 
 
-
       </div>
     </div>
   );

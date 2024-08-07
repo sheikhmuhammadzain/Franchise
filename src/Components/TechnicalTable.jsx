@@ -2,8 +2,11 @@ import { useState } from "react";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { LuPencilLine } from "react-icons/lu"; // Import the icon
+import ReportIssuePopup from "./Report";
+
 
 function TechnicalTable() {
+  const [open, setOpen] = useState(false);
   const [tableData, setTableData] = useState([
     { requestId: "TR01", userId: "A102", fullName: "Hedwig F. Nguyen", userType: "Franchisor", requestTitle: "Cannot update profile info", dateSubmitted: "12-Oct-2024", status: "Pending" },
     { requestId: "TR02", userId: "A102", fullName: "Hedwig F. Nguyen", userType: "Franchisor", requestTitle: "Issue with report export", dateSubmitted: "12-Oct-2024", status: "Pending" },
@@ -59,13 +62,16 @@ function TechnicalTable() {
               <td className="px-4 py-2 border">{row.requestTitle}</td>
               <td className="px-4 py-2 border">{row.dateSubmitted}</td>
               <td className="px-4 py-2 border">{row.status}</td>
-              <td className="px-4 py-2 border text-center">
-                <LuPencilLine className="text-gray-500 cursor-pointer" />
+              <td onClick={() => setOpen(true)}  className="px-4 py-2 border text-center">
+                < LuPencilLine className="text-gray-500 cursor-pointer" />
               </td> {/* Add this line */}
             </tr>
           ))}
         </tbody>
       </table>
+      {open&&<ReportIssuePopup open={open} setOpen={setOpen} />}
+      
+
       <div className="flex justify-end p-5 bg-gray-50">
         <Stack spacing={7}>
           <Pagination count={10} shape="rounded" color="primary" />
