@@ -43,7 +43,7 @@ function Table() { const [tableData, setTableData] = useState([
   },
   {
     id: "A17601",
-    fullName: "Hedwig F. Nguyen",
+    fullName: "HedwigdsfNguyen",
     franchiseName: "KFC",
     email: "ArcuVelFoun@gmail.com",
     lastLogin: "-",
@@ -52,7 +52,7 @@ function Table() { const [tableData, setTableData] = useState([
   },
   {
     id: "A10361",
-    fullName: "Hedwig F. Nguyen",
+    fullName: "Hedwisdf ",
     franchiseName: "KFC",
     email: "ArcuVelFoun@gmail.com",
     lastLogin: "-",

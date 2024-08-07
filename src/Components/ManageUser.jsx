@@ -445,12 +445,15 @@ import { Link } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import EditProfile from "./EditProfile";
+import ResetPassword from "./ResetPassword";
+import DeleteUser from "./DeleteUser";
 
 function ManageUser() {
   const [openDialog, setOpenDialog] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [Reset, setReset] = useState(false);
+  const [Delete, setDelete] = useState(false);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -473,6 +476,17 @@ function ManageUser() {
       lastLogin: "-",
       plan: "Basic",
       status: "Inactive",
+      
+    },
+    {
+      id: "A1321",
+      fullName: "Hedwig F. Nguyen",
+      franchiseName: "Ksdf",
+      email: "ArcuVeln@gmail.com",
+      lastLogin: "-",
+      plan: "Pro",
+      status: "active",
+      
     },
     // ... (other initial data)
   ]);
@@ -514,7 +528,8 @@ function ManageUser() {
       setReset(true);
     } else if (option === 'Delete') {
       // Implement delete functionality
-      console.log(`Delete user with ID: ${id}`);
+      setDelete(true);
+      
     }
   };
 
@@ -734,9 +749,9 @@ function ManageUser() {
                         >
                           <BsThreeDotsVertical />
                         </button>
-                        {openDropdown === row.id && (
+                        {openDropdown === row.id && ( 
                           <div className="absolute right-0 mt-2 bg-white rounded-md shadow-md z-10">
-                            <ul className="py-2">
+                            <ul className="py-2 ">
                               <li
                                 className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                                 onClick={() => handleOptionClick(row.id, 'Edit')}
@@ -744,7 +759,7 @@ function ManageUser() {
                                 Edit
                               </li>
                               <li
-                                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                                className="px-4 max-w-fit whitespace-nowrap py-2 hover:bg-gray-100 cursor-pointer"
                                 onClick={() => handleOptionClick(row.id, 'Reset password')}
                               >
                                 Reset password
@@ -858,6 +873,15 @@ function ManageUser() {
       {
         isOpen && (<EditProfile isOpen={isOpen} setIsOpen={setIsOpen} />)
       }
+        {
+        Reset && (<ResetPassword Reset={Reset} setReset={setReset} />)
+      }
+ {
+        Delete && (<DeleteUser     Delete={Delete} setDelete={setDelete} />)
+      }
+
+
+      {/* Delete User Dialog */}
     
     </div>
   );

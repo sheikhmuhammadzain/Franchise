@@ -1,52 +1,55 @@
 import  { useState } from "react";
+import { MdClose } from "react-icons/md";
 
-function DeleteUser() {
-  const [isOpen, setIsOpen] = useState(false);
+function DeleteUser({Delete, setDelete}) {
 
   const openPopup = () => {
-    setIsOpen(true);
+    Delete(true);
   };
 
   const closePopup = () => {
-    setIsOpen(false);
+    setDelete(false);
   };
 
   return (
     <div>
       <button onClick={openPopup}>Delete Account</button>
 
-      {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-96">
-            <h2 className="text-xl font-bold mb-4">Delete Account</h2>
-            <p className="mb-4">
+      {Delete && (
+        <div className="fixed inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white  rounded-lg shadow-lg pb-4 max-w-[700px]">
+            <h2 className="text-xl rounded-lg bg-gray-50 p-5 mb-4 flex item-center justify-between">Delete Account <MdClose />
+            </h2>
+            <div className="px-4 py-2">
+            <p className="mb-4 font-bold">
               Deleting this franchisor will also delete the following associated
               accounts:
             </p>
-            <ul className="list-disc ml-6 mb-4">
+            <ul className="list-disc ml-6 mb-4 font-bold">
               <li>5 Franchisees</li>
               <li>2 Sales</li>
             </ul>
-            <p className="text-red-500 font-bold">
+            <p className="text-red-500 ">
               This action cannot be undone.
             </p>
             <div className="flex justify-end mt-4">
               <button
-                className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
+                className="gray-btn  mr-4"
                 onClick={closePopup}
               >
                 Cancel
               </button>
               <button
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                className="px-4 py-3 bg-red-400 text-white rounded"
                 onClick={() => {
                   // Implement delete logic here
-                  console.log("Delete All clicked!");
                   closePopup();
                 }}
               >
                 Delete All
               </button>
+            </div>
+            
             </div>
           </div>
         </div>
