@@ -118,14 +118,13 @@ const FinancialOverview = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-4 mb-6 "  >
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-3 mb-6 "  >
 
         <div className="bg-white p-4 rounded shadow  mb-2">
           <DonutChart />
         </div>
 
         <div className="bg-white pb-12 px-2 pt-3 rounded shadow h-full max-w-full  overflow-hidden">
-          <h2 className="text-lg font-semibold mb-4">Top Sales Location</h2>
           <BarChartComponent />
         </div>
 
