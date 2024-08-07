@@ -23,6 +23,7 @@ import {
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import Tables from "./Tables";
+import TechnicalTable from "./TechnicalTable";
 
 const TechnicalRequests = () => {
   // Mock data - replace with actual data fetching logic
@@ -86,7 +87,7 @@ const TechnicalRequests = () => {
 
 
 
-        <Tables />
+        <TechnicalTable />
 
 
 
