@@ -437,13 +437,14 @@
 
 
 
-import React, { useState } from "react";
+import  { useState } from "react";
 import { IoFilterOutline } from "react-icons/io5";
 import { RiDownloadLine } from "react-icons/ri";
 import { IoMdAdd } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import EditProfile from "./EditProfile";
 
 function ManageUser() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -854,6 +855,9 @@ function ManageUser() {
       )}
 
       {/* Edit Profile Dialog */}
+      {
+        isOpen && (<EditProfile isOpen={isOpen} setIsOpen={setIsOpen} />)
+      }
     
     </div>
   );
