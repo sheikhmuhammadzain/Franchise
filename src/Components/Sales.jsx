@@ -6,6 +6,7 @@ import { IoMdAdd } from "react-icons/io";
 
 import Tables from "./Tables";
 import Header from "./Header";
+import { MdClose } from "react-icons/md";
 import SearchPanel from "./SearchPanel";
 import Sidebar from "./Sidebar";
 // ... (other imports remain the same)
@@ -285,104 +286,105 @@ function Sales() {
         <div></div>
 
         {openDialog && (
-          <div className="fixed z-[32] inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-semibold">Add Franchisor</h2>
+        <div className="fixed z-[32] inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white  rounded-lg shadow-md w-full max-w-md">
+            <div className="flex  rounded-lg items-center justify-between mb-4 bg-gray-50 p-2">
+              <h2 className=" p-3 font-semibold">Add Franchisor</h2>
+              <button
+                onClick={handleCloseDialog}
+                className="text-gray-500 hover:text-gray-700"
+              >
+               <MdClose className="text-xl text-black  box-border mr-2 mb-2 " />
+
+              </button>
+            </div>
+
+            <form onSubmit={handleSubmit}>
+              <div className="grid grid-cols-2 gap-4 mb-4 p-5">
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-sm font-bold text-gray-700 mb-1"
+                  >
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    placeholder="Enter First Name"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-bold text-gray-700 mb-1 "
+                  >
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    placeholder="Enter Last Name"
+                  />
+                </div>
+              </div>
+              <div className="mb-4 px-4">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-bold text-gray-700 mb-1"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  placeholder="Enter Email"
+                />
+              </div>
+              <div className="mb-6 px-5">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-bold text-gray-700 mb-1"
+                >
+                  Create Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
+                  placeholder="Create a password for the user"
+                />
+              </div>
+              <div className="flex justify-end p-5">
                 <button
                   onClick={handleCloseDialog}
-                  className="text-gray-500 hover:text-gray-700"
+                  type="button"
+                  className="gray-btn mr-2"
                 >
-                  ×
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className='blue-btn'
+                >
+                  Add
                 </button>
               </div>
-
-              <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label
-                      htmlFor="firstName"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-                      placeholder="Enter First Name"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="lastName"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-                      placeholder="Enter Last Name"
-                    />
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    placeholder="Enter Email"
-                  />
-                </div>
-                <div className="mb-6">
-                  <label
-                    htmlFor="password"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Create Password
-                  </label>
-                  <input
-                    type="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    placeholder="Create a password for the user"
-                  />
-                </div>
-                <div className="flex justify-end">
-                  <button
-                    onClick={handleCloseDialog}
-                    type="button"
-                    className="bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-md hover:bg-gray-200 mr-2"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700"
-                  >
-                    Add
-                  </button>
-                </div>
-              </form>
-            </div>
+            </form>
           </div>
-        )}
+        </div>
+      )}
       </div>
     </>
   );

@@ -4,10 +4,11 @@ import { FiUsers } from "react-icons/fi";
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
 import { BsWindowPlus } from "react-icons/bs";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const Sidebar = ({ activeButton, onButtonClick }) => {
+const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -39,7 +40,7 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
       className={`fixed top-0 left-0 h-screen bg-white z-30 shadow-lg transition-transform transform ${
         isOpen ? "translate-x-0" : "-translate-x-[80%]"
       }`}
-      style={{ width: "220px" }} // Set a fixed width for better responsiveness
+      style={{ width: "220px" }}
     >
       <div className="flex items-center justify-between p-4">
         <img src="/group-84152-1@2x.png" alt="Logo" width={144} />
@@ -50,30 +51,26 @@ const Sidebar = ({ activeButton, onButtonClick }) => {
       </div>
       <div className="flex flex-col">
         {buttons.map((button) => (
-          <Link key={button.id} to={button.linkTo}>
-            <div
-              className={`flex items-center text-sm px-3 py-2 font-bold rounded mx-3 cursor-pointer hover:bg-[#F2F4FF] hover:text-blue-400 ${
-                activeButton === button.id
-                  ? "bg-[#F2F4FF] text-blue-400"
-                  : "bg-white text-gray-900"
-              }`}
-              onClick={() => onButtonClick(button.id)}
-            >
-              {button.icon}
-              <span className={`ml-2 ${isOpen ? "block" : "hidden"}`}>
-                {button.text}
-              </span>
-            </div>
-          </Link>
+          <div key={button.id}>
+            <Link to={button.linkTo}>
+              <div
+                className={`flex items-center text-sm px-3 py-2 font-bold rounded mx-3 cursor-pointer hover:bg-[#F2F4FF] hover:text-blue-400 ${
+                  location.pathname === button.linkTo
+                    ? "bg-[#F2F4FF] text-blue-400"
+                    : "bg-white text-gray-900"
+                }`}
+              >
+                {button.icon}
+                <span className={`ml-2 ${isOpen ? "block" : "hidden"}`}>
+                  {button.text}
+                </span>
+              </div>
+            </Link>
+          </div>
         ))}
       </div>
     </aside>
   );
-};
-
-Sidebar.propTypes = {
-  activeButton: PropTypes.string,
-  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default Sidebar;
