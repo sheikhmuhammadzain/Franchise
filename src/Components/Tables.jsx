@@ -128,58 +128,40 @@ const handleOptionClick = (id, option) => {
   return (
     <div className="mx-auto overflow-scroll bg-white p-2 rounded">
      
-      <table className="w-full border-collapse rounded">
-        {/* ... (table head remains the same) ... */}
-        <tbody>
-          {tableData.map((row, index) => (
-            <tr
-              key={row.id}
-              className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}
-            >
-              <td className="px-1 py-2 border-b">{row.id}</td>
-              <td className="px-4 py-2 border-b">{row.fullName}</td>
-              <td className="px-4 py-2 border-b">{row.franchiseName}</td>
-              <td className="px-4 py-2 border-b">{row.email}</td>
-              <td className="px-4 py-2 border-b">{row.lastLogin}</td>
-              <td className="px-4 py-2 border-b">{row.plan}</td>
-              <td className="px-4 py-2 border-b">{row.status}</td>
-              <td className="px-4 py-2 border-b">
-                <button
-                  onClick={() => handleDropdownOpen(row.id)}
-                  className="text-gray-500 hover:text-gray-700"
-                >
-                  <BsThreeDotsVertical />
-                </button>
-                {/* ... (dropdown menu remains the same) ... */}  {openDropdown === row.id && (
-                  <div className="absolute right-0 mt-2 bg-white rounded-md shadow-md z-10">
-                  <ul className="py-2">
-                    <li
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => handleOptionClick(row.id, 'Edit')}
-                    >
-                      Edit
-                    </li>
-                    <li
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => handleOptionClick(row.id, 'Reset password')}
-                    >
-                      Reset password
-                    </li>
-                    <li
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => handleOptionClick(row.id, 'Delete')}
-                    >
-                      Delete
-                    </li>
-                  </ul>
-                </div>
-              )}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
+     <table className="w-full border-collapse rounded">
+  <thead>
+    <tr className="bg-gray-100">
+      <th className="px-4 py-2 border-b text-left">ID</th>
+      <th className="px-4 py-2 border-b text-left">Full Name</th>
+      <th className="px-4 py-2 border-b text-left">Franchise Name</th>
+      <th className="px-4 py-2 border-b text-left">Email Address</th>
+      <th className="px-4 py-2 border-b text-left">Last Login</th>
+      <th className="px-4 py-2 border-b text-left">Status</th>
+      <th className="px-4 py-2 border-b text-left"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {tableData.map((row, index) => (
+      <tr key={row.id} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+        <td className="px-4 py-2 border-b">{row.id}</td>
+        <td className="px-4 py-2 border-b">{row.fullName}</td>
+        <td className="px-4 py-2 border-b">{row.franchiseName}</td>
+        <td className="px-4 py-2 border-b">{row.email}</td>
+        <td className="px-4 py-2 border-b">{row.lastLogin}</td>
+        <td className="px-4 py-2 border-b">{row.status}</td>
+        <td className="px-4 py-2 border-b">
+          <button
+            onClick={() => handleDropdownOpen(row.id)}
+            className="text-gray-500 hover:text-gray-700"
+          >
+            <BsThreeDotsVertical />
+          </button>
+          {/* ... (dropdown menu remains the same) ... */}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
       {/* Add Franchisor Dialog */}
       {openDialog && (
         <div className="fixed z-[32] inset-0 flex items-center justify-center bg-black bg-opacity-50">
