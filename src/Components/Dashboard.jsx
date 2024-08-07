@@ -1,4 +1,4 @@
-import { Doughnut, Bar } from "react-chartjs-2";
+import BarChartComponent from './BarChartComponent';
 import DonutChart from "./DonutChart";
 import {
   Chart as ChartJS,
@@ -126,7 +126,7 @@ const FinancialOverview = () => {
 
         <div className="bg-white pb-12 px-2 pt-3 rounded shadow h-full max-w-full  overflow-hidden">
           <h2 className="text-lg font-semibold mb-4">Top Sales Location</h2>
-          <Bar data={barData} />
+          <BarChartComponent />
         </div>
 
       </div>
