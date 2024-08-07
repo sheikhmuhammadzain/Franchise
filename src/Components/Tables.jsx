@@ -130,7 +130,7 @@ const handleOptionClick = (id, option) => {
      
      <table className="w-full border-collapse rounded">
   <thead>
-    <tr className="bg-gray-100">
+    <tr className="bg-gray-100 whitespace-nowrap">
       <th className="px-4 py-2 border-b text-left">ID</th>
       <th className="px-4 py-2 border-b text-left">Full Name</th>
       <th className="px-4 py-2 border-b text-left">Franchise Name</th>
