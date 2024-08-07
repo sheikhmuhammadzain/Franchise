@@ -80,7 +80,19 @@ const TechnicalRequests = () => {
       </div>
       <div className="bg-white p-2 rounded-lg">
         <SearchPanel />
+
+
+
+
+
+
         <Tables />
+
+
+
+
+
+
       </div>
     </div>
   );
