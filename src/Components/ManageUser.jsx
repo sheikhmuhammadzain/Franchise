@@ -290,8 +290,8 @@ function ManageUser() {
               )}
 
               {/* Table */}
-              <div className="">
-                <table className="w-full border-collapse rounded whitespace-nowrap ">
+              <div className="overflow-x-auto ">
+                <table className="w-full border-collapse rounded whitespace-nowrap  ">
                   <thead>
                     <tr className="bg-gray-50 text-left">
                       <th className="px-4 py-2 border-b">ID</th>
