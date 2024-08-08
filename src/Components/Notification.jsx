@@ -17,13 +17,23 @@ const Notification = () => {
         >
           <div className="flex py-2 px-4 border-b justify-between items-center gap-9">
             <h1 className="font-bold text-xl">Notification</h1>
-            <button className="btn btn-active bg-[#326DCF] text-white">
+            <button className=" p-1 bg-blue-700 text-white rounded-lg whitespace-nowrap ">
               3 New
             </button>
           </div>
-          <li className="flex items-center justify-between gap-4 p-3 border-b">
+          <li className="flex items-center justify-between gap-4  border-b">
             <div className="flex gap-3">
-            <FaRegBell className="text-6xl bg-gray-50  text-gray-300 rounded-full" />
+            <FaRegBell className="text-3xl mr-3 bg-gray-50  text-gray-300 rounded-full" />
+            <div className="">
+            <h1 className="text-sm">A new sales account has been created for John</h1>
+            <span className="text-gray-500 text-xs">45 min ago</span>
+            </div>         
+            </div>
+           
+          </li>
+          <li className="flex items-center justify-between gap-4 border-b">
+            <div className="flex gap-3">
+            <FaRegBell className="text-3xl mr-3 bg-gray-50  text-gray-300 rounded-full" />
             <div className="">
             <h1 className="text-sm">A new sales account has been created for 'John'</h1>
             <span className="text-gray-500 text-xs">45 min ago</span>
@@ -31,19 +41,9 @@ const Notification = () => {
             </div>
            
           </li>
-          <li className="flex items-center justify-between gap-4 p-3 border-b">
+          <li className="flex items-center justify-between gap-4  border-b">
             <div className="flex gap-3">
-            <FaRegBell className="text-6xl bg-gray-50  text-gray-300 rounded-full" />
-            <div className="">
-            <h1 className="text-sm">A new sales account has been created for 'John'</h1>
-            <span className="text-gray-500 text-xs">45 min ago</span>
-            </div>         
-            </div>
-           
-          </li>
-          <li className="flex items-center justify-between gap-4 p-3 border-b">
-            <div className="flex gap-3">
-            <FaRegBell className="text-6xl bg-gray-50  text-gray-300 rounded-full" />
+            <FaRegBell className="text-3xl mr-3 bg-gray-50  text-gray-300 rounded-full" />
             <div className="">
             <h1 className="text-sm">A new sales account has been created for 'John'</h1>
             <span className="text-gray-500 text-xs">45 min ago</span>

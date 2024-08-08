@@ -1,24 +1,30 @@
 import React from 'react';
+import { IoMdClose } from "react-icons/io";
+import { FaAngleDown } from "react-icons/fa6";
+
+import { MdOutlineFileDownload } from "react-icons/md";
+import { FiFileText } from "react-icons/fi";
 
 function ReportIssuePopup({open, setOpen}) {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-white rounded-sm p-6 w-full max-w-md">
-                
-                <div className="text-xl font-semibold mb-4">Issue with report export</div>
-
-                <div className="flex justify-between mb-4">
-                    <div>
+            <div className="bg-white rounded-lg w-full max-w-md ">
+                <div className="flex bg-gray-50  rounded-lg p-2  justify-between" > TRO1-A102 <IoMdClose className='text-xl' />
+                </div>
+                <div className="text-xl font-semibold  p-4">Issue with report export</div>
+       <div className='p-4 rounded-lg'>
+       <div className="flex justify-between mb-4 border rounded-lg">
+                    <div  className='border p-3 rounded-lg' >
                         <p className="text-sm font-medium">Requested User</p>
-                        <p>Hedwig F. Nguyen</p>
+                        <p  className='font-bold'>Hedwig F. Nguyen</p>
                     </div>
-                    <div>
+                    <div className='border p-3'>
                         <p className="text-sm font-medium">User Type</p>
-                        <p>Franchisor</p>
+                        <p className='font-bold'>Franchisor</p>
                     </div>
-                    <div>
+                    <div className='border p-3'>
                         <p className="text-sm font-medium">Date of submission</p>
-                        <p>14/04/2023</p>
+                        <p className="text-sm text-red-400 font-bold">14/04/2023</p>
                     </div>
                 </div>
 
@@ -32,21 +38,26 @@ function ReportIssuePopup({open, setOpen}) {
                 <div className="mb-4">
                     <p className="text-sm font-medium">Attach File</p>
                     <div className="flex items-center">
-                        <p>Document1.pdf</p>
-                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-4-4H3"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8h4"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 12l4 4 4-4"></path></svg>
+                        <p  className="text-sm cursor-pointer bg-blue-50 rounded-lg border px-2 py-1 flex justify-center item-center py-2 gap-3"><FiFileText className='text-blue-200' />
+                        Document1.pdf <MdOutlineFileDownload />
+                        </p>
+                    
                     </div>
                 </div>
 
-                <div className="flex justify-between">
+                <div className="  block">
                     <div>
                         <p className="text-sm font-medium">Status</p>
-                        <p>Pending</p>
+                        <p className="w-full border p-2  mb-2 rounded-lg text-sm flex justify-between items-center cursor-pointer ">Pending <FaAngleDown />
+                        </p>
                     </div>
-                    <div className="flex space-x-4">
-                        <button className="bg-gray-200 text-gray-700 px-4 py-2 rounded" onClick={() => setOpen(false)}>Cancel</button>
-                        <button className="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
+                    <div className="flex space-x-4 justify-end mt-2">
+                        <button className="gray-btn" onClick={() => setOpen(false)}>Cancel</button>
+                        <button className="blue-btn">Update</button>
                     </div>
                 </div>
+       </div>
+              
             </div>
         </div>
     );
