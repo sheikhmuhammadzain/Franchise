@@ -470,7 +470,6 @@ function ManageUser() {
       {Reset && <ResetPassword Reset={Reset} setReset={setReset} />}
       {Delete && <DeleteUser Delete={Delete} setDelete={setDelete} />}
 
-      {/* Delete User Dialog */}
       <div className="flex justify-end p-5 bg-gray-50">
         <Stack spacing={7}>
           <Pagination count={30} shape="rounded" color="primary" />

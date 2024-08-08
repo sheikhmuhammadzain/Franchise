@@ -36,7 +36,7 @@ function TechnicalTable() {
   return (
     <div className="mx-auto overflow-scroll bg-white p-2 rounded">
      
-      <table className="w-full border-collapse rounded whitespace-nowrap">
+      <table className="w-full border-collapse rounded whitespace-nowrap">  
         <thead>
           <tr className="bg-gray-200 bg-opacity-50 text-left">
             <th className="px-4 py-2 border">Request ID</th>
@@ -53,7 +53,7 @@ function TechnicalTable() {
           {filteredData.map((row, index) => (
             <tr
               key={row.requestId}
-              className={index % 2 === 0 ? "bg-blue-100 bg-opacity-10" : "bg-white"}
+              className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}
             >
               <td className="px-4 py-2 border">{row.requestId}</td>
               <td className="px-4 py-2 border">{row.userId}</td>
